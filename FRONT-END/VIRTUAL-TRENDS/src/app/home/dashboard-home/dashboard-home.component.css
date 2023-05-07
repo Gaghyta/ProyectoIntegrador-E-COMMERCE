@@ -12,3 +12,23 @@ body{
     height: 100%;
     display:flexbox;
   }
+  @media screen and (max-width: 1200px) {
+    .main-container {
+      flex-direction: column;
+    }
+    
+    .main-image-container {
+      width: 100%;
+    }
+  
+    .image-container {
+      margin-right: 0px;
+    }
+
+    .main-all-sections {
+
+        flex-direction: column;
+
+    }
+
+  }
