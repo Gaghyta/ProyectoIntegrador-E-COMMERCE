@@ -19,14 +19,12 @@ Virtual Trend es una empresa que está siempre abierta a la incorporación conti
 
 
 # INTEGRANTES (Aula 5)
-Antonini, Carla Gisele
-Apfelbaum, Ricardo Enrique 
-Fiore, Agostina Maria 
-Galleguillo, Edgar
-Ledesma, Mario Daniel 
-Montenegro Jonatan
-Méndez,Andrés Gastón
-Ramos, Luis Fernando 
-Santana Fagnani, Estefanía Muriel
+  -Antonini, Carla Gisele
+  -Fiore, Agostina Maria 
+  -Gambone  Martinez, Joaquín
+  -Ledesma, Mario Daniel 
+  -Méndez,Andrés Gastón
+  -Rochetti, Uriel
+  -Santana Fagnani, Estefanía Muriel
 
 

@@ -1,0 +1,130 @@
+.modal-reg{
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.contenedor-reg {
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: #f7f7f2;
+    margin: 5% auto;
+    box-shadow: 0px 6px 10px 3px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(12px);
+    width: 668px;
+    height: 1067px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 2px solid #575757;
+    gap: 40px;
+    align-items: center;
+}
+
+.head-reg{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.close-reg{
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    border: 1px solid #575757;
+    margin-right: 15px;
+    margin-top: 15px;
+}
+
+.close-reg:hover{
+    background-color: #575757;
+    color: #f7f7f2;
+    
+}
+
+.title-reg{
+    color: #575757;
+    font-family:Arial, Helvetica, sans-serif;
+    font-style: normal;
+    width: 409px;
+    font-weight: 500;
+    font-size: 24px;
+    margin-top: 42px;
+    border-top: 1px solid #575757;
+    border-bottom: 1px solid #575757;
+    text-align: center;
+    padding: 15px 0px;
+    margin-left: 15px;
+}
+
+.form-reg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 425px;
+}
+
+
+.inp-reg{
+    width: 300px;
+    height: 40px;
+    border-radius: 3px;
+    border: 1px solid #575757;
+}
+
+.lab-reg{
+    width: 275px;
+    background-color: #f7f7f2;
+    position: relative;
+    top: 10px;
+    padding-left: 10px;
+}
+
+.left-reg{
+    width: 60%;
+}
+
+.right-reg{
+    width: 38%;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.body-reg{
+    display: flex;
+    justify-content: center;
+}
+
+.wrn-reg{
+    color: #BB7A80;
+    font-size: 46px;
+    font-weight: bold;
+    border-top: 1px solid #575757;
+    border-bottom: 1px solid #575757;
+    width: 60px;
+    display: block;
+    margin: 0 auto;
+}
+
+.btn-reg{
+    width: 296px;
+    height: 40px;
+    border-radius: 3px;
+    background-color: #575757;
+    color: #f7f7f2;
+    border: none;
+    font-weight: bold;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+    margin-top: 30px;
+}
+
+.btn-reg:hover{
+    background-color: #ffffff;
+    color: #575757;
+    border: 1px solid #575757;
+
+}

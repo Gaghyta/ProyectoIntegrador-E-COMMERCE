@@ -1,13 +1,14 @@
-.popup{
+  .popup{
     position: absolute;
     left: 7.03%;
     right: 56.37%;
-    top: 26.43%;
-    bottom: 11.72%;
+    top: 850px;
+    margin-bottom: 11.72%;
     width: 500px;
     height: 475px;
     border: 2px solid #3b3d40;
     border-radius: 6px;
+    background-color: #f7f7f2 ;
   }
   
   .cerrar{

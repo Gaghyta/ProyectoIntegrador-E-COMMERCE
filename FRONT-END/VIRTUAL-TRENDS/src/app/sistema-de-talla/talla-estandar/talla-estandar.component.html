@@ -1,23 +1,23 @@
 <div class="popup">
-  <link rel="stylesheet" type="text/css" href="talla-estandar.component.css">
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
-  <button class="cerrar">&times;</button>
-    <hr class="contornoarriba">
-    <h2 class="titulo">SISTEMA DE TALLE ESTÁNDAR</h2>
-    <hr class="contornoabajo">
-    <p class="textorandom">Nuestros avatares se manejan en medidas
-      estandar (XS-S-M-L-XL). Sin embargo, tomando
-      tus medidas, podés personalizarlas cargando tu
-      talla en el formulario.</p>
-      <div class="tallestandar">
-      <div class="talle">TALLE ESTÁNDAR</div>
+    <link rel="stylesheet" type="text/css" href="talla-estandar.component.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <button class="cerrar" (click)="cerrarEstandar()">&times;</button>
+      <hr class="contornoarriba">
+      <h2 class="titulo">SISTEMA DE TALLE ESTÁNDAR</h2>
+      <hr class="contornoabajo">
+      <p class="textorandom">Nuestros avatares se manejan en medidas
+        estandar (XS-S-M-L-XL). Sin embargo, tomando
+        tus medidas, podés personalizarlas cargando tu
+        talla en el formulario.</p>
+        <div class="tallestandar">
+        <div class="talle">TALLE ESTÁNDAR</div>
+        </div>
+      <div class="bdt">
+        <button class="botoncitodetalla" data-size="XS">XS</button>
+        <button class="botoncitodetalla" data-size="S">S</button>
+        <button class="botoncitodetalla" data-size="M">M</button>
+        <button class="botoncitodetalla" data-size="L">L</button>
+        <button class="botoncitodetalla" data-size="XL">XL</button>
       </div>
-    <div class="bdt">
-      <button class="botoncitodetalla" data-size="XS">XS</button>
-      <button class="botoncitodetalla" data-size="S">S</button>
-      <button class="botoncitodetalla" data-size="M">M</button>
-      <button class="botoncitodetalla" data-size="L">L</button>
-      <button class="botoncitodetalla" data-size="XL">XL</button>
+      <button class="agregaralcashito">AGREGAR AL CARRITO</button>
     </div>
-    <button class="agregaralcashito">AGREGAR AL CARRITO</button>
-  </div>

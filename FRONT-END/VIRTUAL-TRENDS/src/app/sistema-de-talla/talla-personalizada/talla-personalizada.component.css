@@ -4,8 +4,8 @@
 
 .popup-title-container {
     position: relative;
-    padding: 0px 45% 0px 5%;
-    width: auto;
+    padding: 0px 0% 0px 5%;
+    width: 300px;
     text-align: left;
 }
 
@@ -19,32 +19,36 @@
 .popup-box {
     position: relative;
     background-color: #F8F8F8;
-    width: 50%;
-    left: 8%;
-    right: 8%;
-    top: 14%;
+    width: 400px;
+    height: auto;
+    margin-top: 5%;
     border: 2px solid #575757;
     margin-bottom: 50px;
     border-radius: 6px;
-    padding:20px;
+    padding: 5%;
+}
+
+.form-container{
+    width: 30%;
 }
 
 .input-container{
     position: relative;
     background-color: #FFFFFF;
-    height: 40px;
+    height: 30px;
     border: 2px solid #575757;
     font-family: 'archivo';
     font-style: normal; 
     border-radius: 6px;
-    margin-left: 7%;
     margin-bottom: 30px;
-    width: 45%;
+    margin-left: 20px;
+    width: 150px;
     font-weight: 500;
     font-size: 12px;
     line-height: 13px;
     display: flex;
     align-items: center;
+    justify-content: center;
     color: #000000;
 }
 
@@ -66,11 +70,13 @@
 .input-container>input{
     margin-left: 2%;
     margin-right: 2%;
+    margin-bottom: 8%;
     width: 96%;
     border: none;
     outline: none;
     background: none;
     font-size: 12px;
+    display: flex;
 }
 
 #first-textbox{
@@ -83,9 +89,11 @@
 
 #submit-input{
     margin-bottom: 60px;
+    width: 350px;
 }
 
 #submit-button{
+    cursor: pointer;
     width: 100%;
     height: 100%;
     border: none;
@@ -107,6 +115,7 @@
 }
 
 .close-button{
+    cursor: pointer;
     position: absolute;
     border: none;
     outline: none;
@@ -125,18 +134,21 @@
     background-image: url(../../../assets/Boton-cierre-activo.bmp);
 }
 
-
-
-#exclamation-container{
+.exclamation-container{
     position: absolute;
+    width: 60%;
+    left: 300px;
     top: 120px;
-    left: 71%;
+}
+
+#exclamation-alert{
     width: 40px;
     padding-top: 10px;
+    left: -5px;
     text-align: center;
 }
 
-#exclamation-container>h1{
+#exclamation-alert>h1{
     font-weight: 700;
     font-size: 30px;
     color: #BB7A80;
@@ -144,8 +156,8 @@
 
 .exclamation-subtitle{
     position: absolute;
-    top: 200px;
-    left: 70%;
+    margin-top: 10px;
+    left: -35px;
     font-weight: 500;
     font-size: 18px;
     line-height: 10px;
@@ -155,8 +167,8 @@
 
 .exclamation-text{
     position: absolute;
-    top: 250px;
-    left: 65%;
+    margin-top: 40px;
+    left: -70px;
     font-weight: 400;
     width: 200px;
     font-size: 12px;
@@ -167,7 +179,7 @@
 
 .vertical-center {
     margin: 0;
-    position: absolute;
+    position: relative;
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -184,32 +196,35 @@
 
 /** Media queries */
 
-@media screen and (min-width: 768px){
-    
-}
-
 @media screen and (max-width: 768px) {
     .popup-box {
         margin-right: 200;
     }
     .input-container{
-        margin-left: none;
-        width: 80%;
+        margin-left: 70%;
+        width: 200px;
+        height: 40px;
     }
     .popup-title-container {
-        padding: 0px 5% 0px 5%;
+        width: 300px;
+        margin-left: 5%;
     }
-    #exclamation-container{
+    .exclamation-container{
         position: relative;
         top: auto;
         left: auto;
         width: auto;
         text-align: center;
     }
+
+    #exclamation-alert{
+        left: 30%;
+    }
+
     .exclamation-subtitle{
         position: relative;
         top: auto;
-        left: auto;
+        left: -15px;
         text-align: center;
     }
     .exclamation-text{
@@ -218,12 +233,20 @@
         left: 20%;
         text-align: center;
     }
+
+    #last-textbox{
+        margin-bottom: 0px;
+    }
+
+    #submit-input{
+        margin-bottom: 60px;
+        left: -55%;
+        width: 250px;
+    }
 }
 
 @media screen and (max-width: 1200px) {
     .popup-box {
-        margin-left: 10%;
-        padding: 100px;
     }
 
     .main-product-title {
