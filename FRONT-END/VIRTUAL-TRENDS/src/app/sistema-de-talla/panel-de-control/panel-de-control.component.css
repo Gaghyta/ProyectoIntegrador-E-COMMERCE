@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.container-texto {
+  width: 50%;
+}
+.container-imagen {
+  width: 50%;
+}
+@media (max-width: 769px) {
+  .container {
+    display: block;
+  }
+}

@@ -1,0 +1,126 @@
+* {
+    color: #575757;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.main-product-container {
+    width: 75%;
+    text-align-last: center;
+}
+
+.main-product-description {
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.color-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 10%;
+    margin: 0px 5px;
+    border: 1px solid #575757;
+    display: inline-block;
+    cursor: pointer;
+    transition: box-shadow .5s;
+}
+
+.color-box:hover {
+    box-shadow: 0px 0px 50px 8px rgba(0,0,0,0.52);
+}
+
+.table-colors {
+    border-collapse: separate;
+    border-spacing: 3em 0.5em;
+    margin: auto;
+}
+
+.sizes-button {
+    padding: 10px 0px 8px;
+    width: 75%;
+    background: #3B3D40;
+    color: #F7F7F2;
+    font-weight: 500;
+    border-radius: 3px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+    transition: background-color .5s;
+    margin-top: 40px;
+    font-size: 16px;
+}
+
+.sizes-button:hover {
+    background: black;
+}
+
+/** Box colors */
+
+.dark-red {
+    background-color: #5E0F0F;
+}
+
+.purple-grey {
+    background-color: #525781;
+}
+
+.orange {
+    background-color: #DAA668;
+}
+
+.dark-green {
+    background-color: #2C4E20;
+}
+
+.salmon {
+    background-color: #CBA49A;
+}
+
+.cyan {
+    background-color: #A8D3D9;
+}
+
+/** Media queries */
+
+@media screen and (max-width: 500px) {
+    .main-product-container {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .table-colors {
+        border-spacing: 1em 0.5em;
+    }
+
+    .sizes-button {
+        width: 75%;
+        margin: 40px auto 0px;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 768px) {
+    .main-product-container {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .sizes-button {
+        width: 50%;
+        margin: 40px auto 0px;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    .main-product-container {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .sizes-button {
+        width: 50%;
+        margin: 40px auto 0px;
+        display: flex;
+        justify-content: center;
+    }
+}

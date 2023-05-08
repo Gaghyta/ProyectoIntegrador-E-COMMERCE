@@ -1,0 +1,187 @@
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+}
+
+.input-group{
+    display: flex;
+flex-direction: column;
+text-align: left;
+
+}
+
+h2{
+color: aqua;
+font-size: 35px;
+
+}
+
+label{
+
+color: #F7F7F2;
+font-size: 15px;
+font-weight: 600px;
+margin-bottom: 15px;
+
+}
+
+.Contacto-title-container {
+    width: 30%;
+    text-align: center;
+    margin: auto;
+}
+
+.Contacto-title{
+    position: relative;
+    border-top: 2px solid #575757;
+    border-bottom: 2px solid #575757;
+    font-weight: 500;
+    font-family: 'Josefin Sans';
+    font-style: normal; 
+    font-size: 24px;
+    line-height: 40px;
+}
+
+
+.popup-box {
+    position: absolute;
+    width: 50%;
+    left: 8%;
+    right: 8%;
+    top: 14%;
+    border: 2px solid #575757;
+    margin-bottom: 200px;
+    border-radius: 6px;
+    padding:20px;
+}
+
+.input-container{
+    position: relative;
+    height: 40px;
+    border: 2px solid #575757;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    width: 20%;
+}
+
+
+.input-container>h1{
+    position: absolute;
+    display: inline-block;
+    margin-left: 2%;
+    padding: 0 10px;
+    top: -15px;
+    background-color: #F7F7F2;
+    font-size: 12px;
+}
+
+.input-container>input{
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 96%;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 12px;
+}
+
+.input-container>textarea{
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 96%;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 12px;
+
+}
+#mensaje-container{
+    height: 80px ;
+}
+
+
+#first-textbox{
+    margin-top: 35px;
+}
+
+#last-textbox{
+    margin-bottom: 40px;
+}
+
+#submit-input{
+    margin-bottom: 60px;
+}
+
+#submit-button{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 12px;
+}
+#submit-button:hover{
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+#submit-input:active, #submit-button:active{
+    color:#F7F7F2;
+    background-color: #3B3D40;
+}
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/** Media queries */
+
+@media screen and (max-width: 768px) {
+    .popup-box {
+        padding-left: 5%;
+        padding-right: 5%;
+        margin: 0 auto;
+
+    }
+
+    .input-container{
+        margin-left: none;
+        width: 80%;
+    }
+    .formulario{
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    .Contacto-title-container {
+        width: 100%;
+        
+    }
+    
+}
+
+@media screen and (max-width: 1200px) {
+    .popup-box {
+        margin: 0 auto;
+    }
+
+    .main-product-title {
+        margin-top: 20px;
+    }
+}
+

@@ -1,0 +1,30 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 5% 0%;
+  height: 100%;
+}
+
+.pictures-container {
+  width: 50%;
+  margin-right: 50px;
+}
+
+.product-container {
+  width: 50%;
+}
+
+@media screen and (max-width: 1200px) {
+  .main-container {
+    flex-direction: column;
+  }
+  
+  .product-container, .pictures-container {
+    width: 100%;
+  }
+
+  .pictures-container {
+    margin-right: 0px;
+  }
+}

@@ -1,0 +1,18 @@
+<div class="container-texto" *ngIf="tofPersonalizado == false && tofEstandar==false">
+
+    <h1 class="Sistema-talle" > SISTEMA DE TALLES </h1>
+    <P class= "STtext"> Nuestros avatares se manejan tanto en un sistema de talles basados en medidas estándar para los talles (XS-S-M-L-XL) que podés encontrar en los negocios físicos así como también podesmos construir uno a tu medida </P>
+    <p class= "STtext"> Seleccioná a continuación entre los talles disponibles, </p>
+    <button type="button" class="btn btn-dark" (click)="abrirEstandar()">TALLA ESTANDAR</button>
+    <p class= "STtext"> O cargá tus medidas personales para que podamos confeccionar la prenda a tu medida</p>
+    <button type="button" class="btn btn-dark" (click)="abrirPersonalizado()">TALLA PERSONALIZADA</button>
+
+</div>
+
+<app-talla-personalizada *ngIf="tofPersonalizado == true"></app-talla-personalizada>
+
+<app-talla-estandar *ngIf="tofEstandar == true"></app-talla-estandar>
+
+
+
+

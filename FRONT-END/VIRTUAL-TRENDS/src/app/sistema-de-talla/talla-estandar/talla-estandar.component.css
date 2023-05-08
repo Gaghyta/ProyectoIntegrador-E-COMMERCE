@@ -1,0 +1,137 @@
+  .popup{
+    position: absolute;
+    left: 7.03%;
+    right: 56.37%;
+    top: 850px;
+    margin-bottom: 11.72%;
+    width: 500px;
+    height: 475px;
+    border: 2px solid #3b3d40;
+    border-radius: 6px;
+    background-color: #f7f7f2 ;
+  }
+  
+  .cerrar{
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 22px;
+    height: 22px;
+    background-color: #f7f7f2;
+    border: 2px solid #575757;
+    border-radius: 6px;
+    font-size: 22px;
+    color: #575757;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 0%;
+  }
+  
+  .cerrar:hover {
+    background-color:#575757;
+    color: #f7f7f2;
+  }
+  
+  .contornoarriba {
+    margin-top: 42px;
+    width: 401px;
+    color:#3b3d40;
+  }
+  
+  .titulo {
+    text-align: center;
+    font-style:normal 409px;
+    font-size: 24px;
+    color: #3b3d40 ;
+    font-family: 'Josefin Sans';
+    height: 10px;
+    left: 129px;
+    margin-top: 23px;
+    line-height: 10px;
+  }
+  .contornoabajo {
+    top: 14px;
+    width: 401px;
+    color:#3b3d40;
+  }
+  
+  .textorandom {
+    width: 254px;
+    height: 52px;
+    top: 4px;
+    font-size: 12px;
+    text-align: center;
+    font-family: arial;
+    margin: auto;
+  }
+  
+  .tallestandar{
+    background-color: #575757;
+    border: 2px #575757;
+    border-radius: 3px;
+    width: 300px;
+    margin-left: 100px;
+    margin-top: 58px;
+    height: 40px;
+  }
+  
+  .talle{
+    font: 16px 'Josefin Sans';
+    font-weight: 700;
+    color: #f7f7f2;
+    width: 195;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
+  }
+  .bdt {
+    display: flex;
+    justify-content: center;
+    top: 51px;
+  }
+
+  .botoncitodetalla {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    margin-top: 51px;
+    margin-right: 12.5px;
+    margin-left: 12.5px;
+    background-color: #f7f7f2;
+    color: #575757;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 2px solid #575757;
+    font-size: 11px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Josefin Sans';
+  }
+  
+  .botoncitodetalla:active {
+    background-color:#575757;
+    color: #f7f7f2;
+  }
+  
+  .agregaralcashito {
+    display: block;
+    margin: auto;
+    margin-top: 41px;
+    width: 200px;
+    height: 40px;
+    background-color: #f7f7f2;
+    border: 2px solid #575757;
+    cursor: pointer;
+    border-radius: 3px;
+    font-family: 'Josefin Sans';
+  }
+  
+  .agregaralcashito:hover {
+    background-color: #575757;
+    color: #f7f7f2;
+  }

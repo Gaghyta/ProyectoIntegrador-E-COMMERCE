@@ -1,0 +1,119 @@
+.modal-in{
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.contenedor-in {
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: #f7f7f2;
+    margin: 5% auto;
+    box-shadow: 0px 6px 10px 3px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(12px);
+    width: 500px;
+    height: 475px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 2px solid #575757;
+    gap: 40px;
+    align-items: center;
+}
+
+.head-in{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.close-in{
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    border: 1px solid #575757;
+    margin-right: 15px;
+    margin-top: 15px;
+}
+
+.close-in:hover{
+    background-color: #575757;
+    color: #f7f7f2;
+    
+}
+
+.title-in{
+    color: #575757;
+    font-family:Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 16px;
+    margin-top: 30px;
+}
+
+.btn-in{
+    width: 200px;
+    height: 40px;
+    border-radius: 3px;
+    border: 1px solid #575757;
+    color: #575757;
+    font-weight: bold;
+    background-color: #ffffff;
+}
+
+.btn-in:hover{
+    background-color: #575757;
+    color: #f7f7f2;
+}
+
+.btn-up{
+    width: 200px;
+    height: 40px;
+    border-radius: 3px;
+    background-color: #575757;
+    color: #f7f7f2;
+    border: none;
+    font-weight: bold;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+}
+.btn-up:hover{
+    background-color: #ffffff;
+    color: #575757;
+    border: 1px solid #575757;
+}
+
+.inp-in{
+    width: 300px;
+    height: 40px;
+}
+.recu-in{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 12px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #575757;
+}
+.form-in{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.lab-in{
+    width: 275px;
+    background-color: #f7f7f2;
+    position: relative;
+    top: 20px;
+    padding-left: 10px;
+    margin-left: 10px;
+}
