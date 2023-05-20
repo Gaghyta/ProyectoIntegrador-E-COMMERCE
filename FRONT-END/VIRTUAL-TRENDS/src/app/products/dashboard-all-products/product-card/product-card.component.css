@@ -1,0 +1,74 @@
+.card-container {
+    display: flex;
+    border-radius: 15px;
+    border: solid 1px #575757;
+    background-color: #F8F8F8;
+    transition: background-color .5s;
+    max-width: 350px;
+    margin-bottom: 16px;
+}
+
+.card-container:hover {
+    background-color: #D9D9D9;
+    cursor: pointer;
+}
+
+.text-container {
+    padding-right: 10px;
+}
+
+.picture {
+    width: 150px;
+    height: 150px;
+    margin-right: 16px;
+    align-self: center;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    min-width: 50%;
+}
+
+h1 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.price {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 0;
+    font-family: 'Archivo', sans-serif;
+}
+
+.amount-buttons {
+    display: flex;
+    align-items: center;
+    margin: 30px 0px 10px;
+    justify-content: space-evenly;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+.favorite-pic {
+    width: 20px;
+    height: 25px;
+    cursor: pointer;
+    float: right;
+}
+
+.favorite-buttons-container {
+    margin: 10px;
+    position: absolute;
+}
+
+@media screen and (max-width: 1000px) {
+}

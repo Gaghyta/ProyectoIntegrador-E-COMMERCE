@@ -1,0 +1,35 @@
+* {
+  background-color: #F7F7F2;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  width: 75%;
+  padding: 5% 0%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.pictures-container {
+  margin-right: 100px;
+}
+
+.product-container {
+  width: 500px;
+}
+
+@media screen and (max-width: 1200px) {
+  .main-container {
+    flex-direction: column;
+  }
+  
+  .product-container, .pictures-container {
+    width: 100%;
+  }
+
+  .pictures-container {
+    margin-right: 0px;
+    margin-bottom: 30px;
+  }
+}

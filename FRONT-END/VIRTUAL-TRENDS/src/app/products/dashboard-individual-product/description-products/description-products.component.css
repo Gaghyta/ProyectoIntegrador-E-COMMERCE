@@ -1,0 +1,56 @@
+* {
+    font-family: 'Josefin Sans', sans-serif;
+    color: #575757;
+}
+
+.main-product-container {
+    width: 100%;
+}
+
+.main-product-title {
+    font-size: 26px;
+    border-top: 2px solid #575757;
+    border-bottom: 2px solid #575757;
+    line-height: 40px;
+    font-weight: 500;
+    padding: 5px 0px 0px;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+.main-product-description {
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.paragraph {
+    font-size: 16px;
+    text-align: center;
+}
+
+/** Media queries */
+
+@media screen and (max-width: 768px) {
+    .main-product-container {
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    .main-product-container {
+        width: 75%;
+        margin: 0 auto;
+    }
+    .main-product-title {
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 1201px) and (max-width: 1500px) {
+    .secondary-pictures-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

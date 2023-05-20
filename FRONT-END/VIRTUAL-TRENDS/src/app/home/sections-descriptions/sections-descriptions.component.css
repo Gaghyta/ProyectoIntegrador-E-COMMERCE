@@ -90,6 +90,7 @@
     margin-top: 40px;
     font-size: 16px;
     font-family: 'Archivo', sans-serif;
+    cursor: pointer;
 }
 
 .all-products-button:hover {

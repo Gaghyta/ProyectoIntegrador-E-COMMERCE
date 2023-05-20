@@ -1,0 +1,10 @@
+<div class="main-product-container">
+    <h3 class="main-product-description">COLORES A ELECCIÓN</h3>
+    <div class="colors-container">
+        <div class="colors">
+            <div class="color-box {{color}}" *ngFor="let color of colors" (click)="selectColor($event)" id="{{color}}"></div>
+        </div>
+    </div>
+    <button class="sizes-button" (click)="navigate()">ELEGÍ TU SISTEMA DE TALLE</button>
+</div>
+<router-outlet></router-outlet>

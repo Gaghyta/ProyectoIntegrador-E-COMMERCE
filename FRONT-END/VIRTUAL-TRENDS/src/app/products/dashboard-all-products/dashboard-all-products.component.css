@@ -1,0 +1,35 @@
+* {
+    font-family: 'Josefin Sans', sans-serif;
+    color: #575757;
+}
+
+.main-product-title {
+    font-size: 26px;
+    border-top: 2px solid #575757;
+    border-bottom: 2px solid #575757;
+    line-height: 40px;
+    font-weight: 500;
+    padding: 5px 0px 0px;
+    width: 30%;
+    text-align: center;
+    margin: 0 0 5%;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    padding: 1% 0% 2%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1000px) {
+    .main-product-title {
+        width: 100%;
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+}
