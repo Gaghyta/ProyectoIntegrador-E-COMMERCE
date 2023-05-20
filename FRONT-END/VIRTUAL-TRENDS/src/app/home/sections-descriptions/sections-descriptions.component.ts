@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationService } from '../../services/navigation/navigation.service';
 
 
 @Component({
@@ -9,12 +8,8 @@ import { NavigationService } from '../../services/navigation/navigation.service'
 })
 export class SectionsDescriptionsComponent implements OnInit {
 
-  constructor(private navigationService: NavigationService) { }
+  constructor() { }
 
   ngOnInit():void {
-  }
-
-  navigate() {
-    this.navigationService.navigateToProducts();
   }
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationService } from 'src/app/services/navigation/navigation.service';
 
 @Component({
   selector: 'app-header',
@@ -8,15 +7,8 @@ import { NavigationService } from 'src/app/services/navigation/navigation.servic
 })
 export class HeaderComponent implements OnInit {
   /*isVisible = false;*/
-  constructor(private navigationService: NavigationService){}
+  constructor(){}
   ngOnInit(): void {
-  }
-
-  navigate() {
-    this.navigationService.navigateToProducts();
-  }
-
-  navigateContacto(){
-    this.navigationService.navigateToContacto();  
+      
   }
 }

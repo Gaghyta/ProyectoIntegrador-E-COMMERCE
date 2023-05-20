@@ -9,7 +9,6 @@ import { FooterComponent } from './shared/footer/footer.component';*/
 import { HomeModule } from './home/home.module';
 import { ProductsModule } from './products/products.module';
 import { SistemaDeTallaModule } from './sistema-de-talla/sistema-de-talla.module';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,8 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     ProductsModule,
     SistemaDeTallaModule,
-    SharedModule,
-    HttpClientModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
