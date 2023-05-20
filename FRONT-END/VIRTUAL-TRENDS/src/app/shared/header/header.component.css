@@ -44,7 +44,7 @@
   .ca-boton {
     text-decoration: none;
     color: #575757;
-    transition: color 0.5s;
+    transition: color 1s;
   }
   
   .ca-boton:hover {
@@ -52,7 +52,6 @@
     text-decoration: underline #1c1b1b;
     text-underline-offset: 6px; 
     font-weight: 600;
-    cursor: pointer;
   }
   
   /* .dropdown {
