@@ -9,6 +9,7 @@ import { DashboardContactoComponent } from './contacto/dashboard-contacto/dashbo
 import { DashboardAllProductsComponent } from './products/dashboard-all-products/dashboard-all-products.component';
 import { LoginLogupComponent } from './cuenta/login-logup/login-logup.component';
 import { CuentaModule } from './cuenta/cuenta.module';
+import { RegistroComponent } from './cuenta/registro/registro.component';
 
 const routes: Routes = [
   // Redirección por defecto a Home
@@ -22,6 +23,7 @@ const routes: Routes = [
   // { path: 'login', component: LoginComponent },
   { path: 'cuenta', component: LoginLogupComponent },
   // { path: 'register', component: RegisterComponent },
+  { path: 'registro', component: RegistroComponent },
   // { path: 'product/:id', component: DashboardIndividualProductComponent },
   { path: 'product', component: DashboardIndividualProductComponent },
   { path: 'products', component: DashboardAllProductsComponent},

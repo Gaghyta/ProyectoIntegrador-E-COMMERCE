@@ -10,9 +10,10 @@ body{
     width: 100%;
     padding: 5% 0%;
     height: 100%;
-    display:flexbox;
+    display:flex;
   }
-  @media screen and (max-width: 1200px) {
+
+  @media screen and (max-width: 2500px) {
     .main-container {
       flex-direction: column;
     }

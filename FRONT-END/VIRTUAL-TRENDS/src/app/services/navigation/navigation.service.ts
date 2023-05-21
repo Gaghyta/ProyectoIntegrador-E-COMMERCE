@@ -64,6 +64,9 @@ export class NavigationService {
         this.router.navigate(['/cuenta']);
     }
 
+    navigateToRegistro() {
+        this.router.navigate(['/registro']);
+      }
 
 
 
