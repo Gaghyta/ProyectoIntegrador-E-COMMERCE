@@ -7,6 +7,8 @@ import { TallaPersonalizadaComponent } from './sistema-de-talla/talla-personaliz
 import { TallaEstandarComponent } from './sistema-de-talla/talla-estandar/talla-estandar.component';
 import { DashboardContactoComponent } from './contacto/dashboard-contacto/dashboard-contacto.component';
 import { DashboardAllProductsComponent } from './products/dashboard-all-products/dashboard-all-products.component';
+import { LoginLogupComponent } from './cuenta/login-logup/login-logup.component';
+import { CuentaModule } from './cuenta/cuenta.module';
 
 const routes: Routes = [
   // Redirección por defecto a Home
@@ -18,6 +20,7 @@ const routes: Routes = [
   // Rutas de los componentes
   { path: 'home', component: DashboardHomeComponent },
   // { path: 'login', component: LoginComponent },
+  { path: 'cuenta', component: LoginLogupComponent },
   // { path: 'register', component: RegisterComponent },
   // { path: 'product/:id', component: DashboardIndividualProductComponent },
   { path: 'product', component: DashboardIndividualProductComponent },
@@ -30,7 +33,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),CuentaModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

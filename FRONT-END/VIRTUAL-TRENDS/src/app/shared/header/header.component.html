@@ -11,7 +11,7 @@
           <a (click)="navigate()" class="ca-boton">Productos</a>
         </li>
         <li>
-          <a (click)="navigateContacto()" class="ca-boton ca-boton_ocultar">Contacto</a>
+          <a (click)="navigateToContacto()" class="ca-boton ca-boton_ocultar">Contacto</a>
         </li>
         <li>
           <a routerLink="/ruta-del-enlace" class="ca-boton">Carrito</a>
@@ -22,7 +22,7 @@
         <li>
           <a routerLink="/ruta-del-enlace" class="ca-boton ca-boton_ocultar">Comunidad</a>
         </li>
-        <li><a routerLink="/ruta-del-enlace" class="ca-boton">Cuenta</a></li>
+        <li><a (click)="navigateToCuenta()" class="ca-boton">Cuenta</a></li>
         <!-- <div class="dropdown">
           <a href="#" class="ca-boton dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Menú

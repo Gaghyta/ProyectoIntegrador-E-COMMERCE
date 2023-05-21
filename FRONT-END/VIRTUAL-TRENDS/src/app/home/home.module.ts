@@ -9,7 +9,7 @@ import { SectionCategoriesProductsComponent } from './section-categories-product
 @NgModule({
   declarations: [DashboardHomeComponent,SectionsDescriptionsComponent,SectionCategoriesProductsComponent,HomeImagesComponent],
   imports: [
-    CommonModule
+    CommonModule,
   ]
 })
 export class HomeModule { }
