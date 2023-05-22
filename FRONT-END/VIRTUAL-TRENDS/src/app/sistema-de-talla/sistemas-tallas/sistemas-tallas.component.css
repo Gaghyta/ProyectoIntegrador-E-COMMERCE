@@ -22,14 +22,29 @@
 }
 
 .STtext {
-  font-family: Archivo;
-  font-size: 1em;
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.86em;
+  line-height: 13px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10%;
+  margin-left: 25%;
+  width: 100%
+}
+
+.STtext1 {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-size: 0.90em;
   font-weight: 700;
   margin-top: 20px;
   text-align: center;
   margin-left: 25%;
   width: 100%;
   margin-bottom: 10%;
+  letter-spacing: 0.18em;
 }
 
 .btn-dark {
