@@ -2,8 +2,8 @@
   width: 50%;
 }
 .avatar {
-  width: 150%;
-  height: 150%;
+  width: 140%;
+  height: 140%;
   margin-left: 20%;
   display: flex;
 }
@@ -30,6 +30,7 @@
   letter-spacing: -0.06em;
   color: #575757;
   width: 180%;
+  padding: 5px 160px 5px;
 }
 .AVtext2 {
   font-family: 'Josefin Sans';
