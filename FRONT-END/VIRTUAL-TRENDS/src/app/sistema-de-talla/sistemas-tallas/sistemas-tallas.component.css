@@ -6,24 +6,24 @@
 
 .container-texto {
   width: 50%;
-  height: 100%;
 }
 
 .Sistema-talle {
   font-size: 26px;
   border-top: 2px solid #575757;
   border-bottom: 2px solid #575757;
-  line-height: 40px;
+  line-height: 250%;
   font-weight: 500;
-  padding: 5px 12px 0px;
+  /* padding: 5px 12px 0px; */
   width: 100%;
   text-align: center;
-  margin-left: 20%;
-  margin-top: 20%;
+  margin-left: 25%;
+  margin-top: 10px;
 }
 
 .STtext {
-  font-size: 16px;
+  font-family: Archivo;
+  font-size: 1em;
   font-weight: 700;
   margin-top: 20px;
   text-align: center;
@@ -76,4 +76,3 @@
     margin-bottom: 10%;
   }
 }
-
