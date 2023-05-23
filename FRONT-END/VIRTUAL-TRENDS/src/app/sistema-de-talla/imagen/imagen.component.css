@@ -19,4 +19,12 @@
   justify-items: center;
   align-items: center;
 }
+.avatar-medida-base{
+  display: flex;
+  font-size: 1em;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: #575757;
+}
 
