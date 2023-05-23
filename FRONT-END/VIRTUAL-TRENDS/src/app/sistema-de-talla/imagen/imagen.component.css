@@ -27,4 +27,23 @@
   letter-spacing: 0.18em;
   color: #575757;
 }
+.container-info-avatar {
+  width: 100%; /* Ajusta el ancho según tus necesidades */
+  justify-content: center;
+  padding: 0;
+  /*margin: 1em;*/
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column; /* Eliminado */
+  align-items: center;
+}
+
+.container-titulo {
+  display: flex;
+  transform-origin: top center;
+  margin-top: 2em;
+  position: relative;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
