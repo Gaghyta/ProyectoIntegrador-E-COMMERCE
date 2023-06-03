@@ -5,7 +5,7 @@
 .popup-title-container {
     position: relative;
     padding: 0px 0% 0px 5%;
-    width: 300px;
+    width: 65%;
     text-align: left;
 }
 
@@ -19,46 +19,43 @@
 .popup-box {
     position: relative;
     background-color: #F8F8F8;
-    width: 400px;
-    height: auto;
+    width: auto;
+    height: 100%;
     margin-top: 5%;
     border: 2px solid #575757;
-    margin-bottom: 50px;
+    margin-bottom: 10%;
     border-radius: 6px;
     padding: 5%;
 }
 
 .form-container{
-    width: 30%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .input-container{
-    position: relative;
-    background-color: #FFFFFF;
-    height: 30px;
-    border: 2px solid #575757;
-    font-family: 'archivo';
-    font-style: normal; 
-    border-radius: 6px;
+    width: 100%;
+    height: 40px;
+    border-radius: 3px;
     margin-bottom: 30px;
     margin-left: 20px;
-    width: 150px;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 13px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000000;
+    font-family: 'archivo';
 }
 
+.text-container{
+    background-color: #FFFFFF;
+    border: 1px solid #575757;
+}
 
 .input-container>h1{
-    position: absolute;
+    position: relative;
     display: inline-block;
-    margin-left: 2%;
-    padding: 0 10px;
-    top: -15px;
+    padding: 2px;
+    top: -20%;
+    left: 5%;
+    width: 90%;
     background-color: #F7F7F2;
     font-weight: 500;
     font-size: 12px;
@@ -68,10 +65,11 @@
 }
 
 .input-container>input{
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-bottom: 8%;
-    width: 96%;
+    position: re;
+    height: 100%;
+    margin-left: 10%;
+    width: 90%;
+    top: -10%;
     border: none;
     outline: none;
     background: none;
@@ -92,72 +90,85 @@
     width: 350px;
 }
 
-#submit-button{
+.btn-dark {
     cursor: pointer;
     width: 100%;
-    height: 100%;
-    border: none;
-    outline: none;
-    background: none;
-    font-weight: 700;
+    background: #3B3D40;
+    color: #F7F7F2;
+    font-weight: 400;
     font-size: 11px;
-    line-height: 12px;
-}
+    border-radius: 3px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+    transition: background-color .5s;
+    font-size: 16px;
+    margin-bottom: 10%;
+  }
 
-#submit-button:hover{
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-}
+  .btn-dark:hover {
+    background: #FFFFFF;
+    color: #3B3D40;
+  }
 
-#submit-input:active, #submit-button:active{
-    color:#F7F7F2;
-    background-color: #3B3D40;
-}
+  .btn-dark:active {
+    background: #3B3D40;
+    color: #FFFFFF;
+  }
+
 
 .close-button{
     cursor: pointer;
     position: absolute;
-    border: none;
+    border: 1px solid #575757;
     outline: none;
     background: none;
     top: 20px;
     right: 20px;
-    background-image: url(../../../assets/Boton-cierre.bmp);
+    background-image: url(../../../assets/CRUZ.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 6px;
     height: 22px;
     width: 22px;
 }
 
+.close-button:hover{
+    background-image: url(../../../assets/CRUZ-CLARA.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
 .close-button:active{
-    border: none;
-    outline: none;
-    background: none;
-    background-image: url(../../../assets/Boton-cierre-activo.bmp);
+    background-image: url(../../../assets/CRUZ.png);
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .exclamation-container{
-    position: absolute;
-    width: 60%;
-    left: 300px;
+    position: relative;
+    width: 150px;
     top: 120px;
 }
 
 #exclamation-alert{
+    position: relative;
     width: 40px;
+    right: -50%;
     padding-top: 10px;
-    left: -5px;
     text-align: center;
 }
 
 #exclamation-alert>h1{
+    position: relative;
+    right: -40%;
     font-weight: 700;
     font-size: 30px;
     color: #BB7A80;
 }
 
 .exclamation-subtitle{
-    position: absolute;
+    position: relative;
     margin-top: 10px;
-    left: -35px;
+    left: 25%;
     font-weight: 500;
     font-size: 18px;
     line-height: 10px;
@@ -166,15 +177,16 @@
 }
 
 .exclamation-text{
-    position: absolute;
+    position: relative;
     margin-top: 40px;
-    left: -70px;
+    left: 25%;
     font-weight: 400;
-    width: 200px;
+    width: 100%;
     font-size: 12px;
     line-height: 14px;
     text-align: center;
     letter-spacing: 0.075em;
+    font-family: 'archivo';
 }
 
 .vertical-center {
@@ -198,44 +210,46 @@
 
 @media screen and (max-width: 768px) {
     .popup-box {
-        margin-right: 200;
+        margin-right: 0;
     }
     .input-container{
-        margin-left: 70%;
+        margin-left: 75%;
         width: 200px;
         height: 40px;
     }
     .popup-title-container {
-        width: 300px;
-        margin-left: 5%;
+        width: 75%;
+        margin-left: 0%;
     }
     .exclamation-container{
         position: relative;
         top: auto;
         left: auto;
-        width: auto;
+        width: 100%;
         text-align: center;
+        margin-left: -25%;
     }
 
     #exclamation-alert{
-        left: 30%;
+        margin-left: 10%;
     }
 
     .exclamation-subtitle{
         position: relative;
         top: auto;
-        left: -15px;
+        margin-left: 10%;
         text-align: center;
     }
     .exclamation-text{
         position: relative;
         top: auto;
-        left: 20%;
+        width: 80%;
+        margin-left: 10%;
         text-align: center;
     }
 
     #last-textbox{
-        margin-bottom: 0px;
+        margin-bottom: 35px;
     }
 
     #submit-input{
@@ -246,8 +260,6 @@
 }
 
 @media screen and (max-width: 1200px) {
-    .popup-box {
-    }
 
     .main-product-title {
         margin-top: 20px;

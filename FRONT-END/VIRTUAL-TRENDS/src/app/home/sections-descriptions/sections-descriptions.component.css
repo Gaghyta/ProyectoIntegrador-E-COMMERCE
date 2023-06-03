@@ -90,6 +90,7 @@
     margin-top: 40px;
     font-size: 16px;
     font-family: 'Archivo', sans-serif;
+    cursor: pointer;
 }
 
 .all-products-button:hover {
@@ -106,12 +107,12 @@
 /** Media queries */
 
 @media screen and (max-width: 768px) {
-    
+
     .main-container {
         /*margin: 0 auto;*/
         width: 80%;
     }
-    
+
     .main-nosotros-container {
         /*margin: 0 auto;*/
         width: 75%;
@@ -134,7 +135,7 @@
         width: 100%;
         margin-top: 20px;
     }
-    
+
     .main-comunidad-title {
         width: 100%;
         margin-top: 20px;
@@ -144,7 +145,7 @@
         width: 100%;
         margin-top: 20px;
     }
-    
+
 }
 
 @media screen and (max-width: 2500px) {
@@ -152,7 +153,7 @@
         /*margin: 0 auto;*/
         width: 100%;
     }
-    
+
     .main-comunidad-title {
         width: 100%;
         margin-top: 30px;
@@ -162,5 +163,5 @@
         width: 100%;
         margin-top: 30px;
     }
-    
+
 }

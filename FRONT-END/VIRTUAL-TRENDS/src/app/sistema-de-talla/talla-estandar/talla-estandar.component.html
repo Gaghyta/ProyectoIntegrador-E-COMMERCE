@@ -1,7 +1,7 @@
 <div class="popup">
     <link rel="stylesheet" type="text/css" href="talla-estandar.component.css">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
-    <button class="cerrar" (click)="cerrarEstandar()">&times;</button>
+    <button class="cerrar" (click)="cerrarEstandar()"></button>
       <hr class="contornoarriba">
       <h2 class="titulo">SISTEMA DE TALLE ESTÁNDAR</h2>
       <hr class="contornoabajo">
@@ -13,11 +13,26 @@
         <div class="talle">TALLE ESTÁNDAR</div>
         </div>
       <div class="bdt">
-        <button class="botoncitodetalla" data-size="XS">XS</button>
-        <button class="botoncitodetalla" data-size="S">S</button>
-        <button class="botoncitodetalla" data-size="M">M</button>
-        <button class="botoncitodetalla" data-size="L">L</button>
-        <button class="botoncitodetalla" data-size="XL">XL</button>
+        <input type="button" [ngClass]="{'inactivo': !esActivo('XS'), 'activo': esActivo('XS')}"
+                             [class.seleccionado]="seleccionado === 'XS'" 
+                             (click)="toggleSeleccionado('XS')" class="botoncitodetalla" value="XS">
+                             
+        <input type="button" [ngClass]="{'inactivo': !esActivo('S'), 'activo': esActivo('S')}"
+                             [class.seleccionado]="seleccionado === 'S'" 
+                             (click)="toggleSeleccionado('S')" class="botoncitodetalla" value="S">
+
+        <input type="button" [ngClass]="{'inactivo': !esActivo('M'), 'activo': esActivo('M')}"
+                             [class.seleccionado]="seleccionado === 'M'" 
+                             (click)="toggleSeleccionado('M')" class="botoncitodetalla" value="M">
+
+        <input type="button" [ngClass]="{'inactivo': !esActivo('L'), 'activo': esActivo('L')}"
+                             [class.seleccionado]="seleccionado === 'L'" 
+                             (click)="toggleSeleccionado('L')" class="botoncitodetalla" value="L">
+
+        <input type="button" [ngClass]="{'inactivo': !esActivo('XL'), 'activo': esActivo('XL')}"
+                             [class.seleccionado]="seleccionado === 'XL'" 
+                             (click)="toggleSeleccionado('XL')" class="botoncitodetalla" value="XL">
+
       </div>
-      <button class="agregaralcashito">AGREGAR AL CARRITO</button>
+      <input type="submit" class="agregaralcashito" value="AGREGAR AL CARRITO">
     </div>

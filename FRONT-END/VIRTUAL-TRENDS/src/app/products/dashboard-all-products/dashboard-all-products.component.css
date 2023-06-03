@@ -1,0 +1,60 @@
+* {
+    font-family: 'Josefin Sans', sans-serif;
+    color: #575757;
+}
+
+.main-product-title {
+    font-size: 26px;
+    border-top: 2px solid #575757;
+    border-bottom: 2px solid #575757;
+    line-height: 40px;
+    font-weight: 500;
+    padding-top: 5px;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto 40px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    padding: 1% 0% 2%;
+    height: 100%;
+    margin: 0 auto;
+    min-height: 300px;
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: #575757;
+    animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .main-product-title {
+        width: 100%;
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    .main-container {
+        min-height: 300px;
+        width: 100%;
+    }
+}

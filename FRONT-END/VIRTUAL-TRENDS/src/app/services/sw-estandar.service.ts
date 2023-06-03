@@ -7,6 +7,6 @@ export class SwEstandarService {
 
   constructor() { }
 
-  $tallaEstandar = new EventEmitter<any>(true);
+  $tallaEstandar = new EventEmitter<any>();
 
 }

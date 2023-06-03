@@ -1,0 +1,7 @@
+<div class="main-container">
+    <div *ngIf="isLoading" class="spinner"></div>
+    <div *ngIf="!isLoading">
+        <h1 class="main-product-title">PRODUCTOS</h1>
+        <app-product-card [products]="products" [hasFavorite]="true" [hasAmount]="true"></app-product-card>
+    </div>
+</div>

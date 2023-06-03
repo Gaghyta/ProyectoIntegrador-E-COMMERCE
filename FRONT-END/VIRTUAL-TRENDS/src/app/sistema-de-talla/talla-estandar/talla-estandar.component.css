@@ -1,25 +1,26 @@
   .popup{
-    position: absolute;
-    left: 7.03%;
+    position:flex;
+    margin-left: 7.03%;
     right: 56.37%;
-    top: 850px;
+    margin-top: 1em;
     margin-bottom: 11.72%;
-    width: 500px;
-    height: 475px;
+    width: 427px;
+    height: 423px;
     border: 2px solid #3b3d40;
     border-radius: 6px;
-    background-color: #f7f7f2 ;
+    background-color: #F8F8F8;
+    transform: translateX(-50%, -50%);
+    transform: translateY(-50%, -50%);
   }
   
   .cerrar{
     cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 22px;
-    height: 22px;
-    background-color: #f7f7f2;
-    border: 2px solid #575757;
+    position: relative;
+    top: 5px;
+    left: 400px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #575757;
     border-radius: 6px;
     font-size: 22px;
     color: #575757;
@@ -27,23 +28,33 @@
     align-items: center;
     display: flex;
     margin: 0%;
+    background-image: url(../../../assets/CRUZ.png);
+    background-repeat: no-repeat;
+    background-size: contain;
   }
   
   .cerrar:hover {
-    background-color:#575757;
-    color: #f7f7f2;
+    background-image: url(../../../assets/CRUZ-CLARA.png);
+    background-repeat: no-repeat;
+    background-size: contain;
   }
   
+  .cerrar:active {
+    background-image: url(../../../assets/CRUZ.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
   .contornoarriba {
     margin-top: 42px;
-    width: 401px;
+    width: 342px;
+    margin-left:10%;
     color:#3b3d40;
   }
   
   .titulo {
     text-align: center;
     font-style:normal 409px;
-    font-size: 24px;
+    font-size: 23px;
     color: #3b3d40 ;
     font-family: 'Josefin Sans';
     height: 10px;
@@ -53,28 +64,32 @@
   }
   .contornoabajo {
     top: 14px;
-    width: 401px;
+    width: 342px;
+    margin-left:10%;
     color:#3b3d40;
   }
   
   .textorandom {
-    width: 254px;
-    height: 52px;
+    width: 217px;
+    height: 46px;
     top: 4px;
     font-size: 12px;
+    font-weight: 400;
     text-align: center;
-    font-family: arial;
+    font-family: 'Archivo', sans-serif;
     margin: auto;
   }
   
   .tallestandar{
     background-color: #575757;
-    border: 2px #575757;
+    border: 3px #575757;
     border-radius: 3px;
-    width: 300px;
-    margin-left: 100px;
-    margin-top: 58px;
-    height: 40px;
+    width: 256px;
+    align-items: center;
+    margin-left: 85px;
+    margin-right: 85px;
+    margin-top: 50px;
+    height: 35px;
   }
   
   .talle{
@@ -82,13 +97,13 @@
     font-weight: 700;
     color: #f7f7f2;
     width: 195;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%,-50%);
+    top:32.5%;
+    left: 27.5%;
+    position: relative;
+    transform: translateX(-50%, -50%);
+    transform: translateY(-50%, -50%);
   }
+
   .bdt {
     display: flex;
     justify-content: center;
@@ -99,39 +114,54 @@
     display: flex;
     height: 40px;
     width: 40px;
-    margin-top: 51px;
+    margin-top: 30px;
     margin-right: 12.5px;
     margin-left: 12.5px;
-    background-color: #f7f7f2;
-    color: #575757;
     cursor: pointer;
     border-radius: 3px;
-    border: 2px solid #575757;
     font-size: 11px;
     justify-content: center;
     align-items: center;
     font-family: 'Josefin Sans';
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+    transition: background-color .2s;
+  }
+
+  .activo {
+    background-color: #f7f7f2;
+    color: #575757;
+    border: 2px solid #575757;
   }
   
-  .botoncitodetalla:active {
-    background-color:#575757;
+  .seleccionado {
+    background-color:#3B3D40;
     color: #f7f7f2;
+  }
+
+  .inactivo {
+    background-color:#FFFFFF;
+    color: #B4B8D5;
+    border: 1px solid rgba(180, 184, 213, 0.4);
   }
   
   .agregaralcashito {
     display: block;
     margin: auto;
-    margin-top: 41px;
-    width: 200px;
-    height: 40px;
+    margin-top: 30px;
+    width: 171px;
+    height: 36px;
+    font-weight: 700;
+    font-size: 11px;
     background-color: #f7f7f2;
-    border: 2px solid #575757;
+    border: 2px solid #3B3D40;
     cursor: pointer;
     border-radius: 3px;
     font-family: 'Josefin Sans';
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+    transition: background-color .5s;
   }
   
   .agregaralcashito:hover {
-    background-color: #575757;
+    background-color: #3B3D40;
     color: #f7f7f2;
   }

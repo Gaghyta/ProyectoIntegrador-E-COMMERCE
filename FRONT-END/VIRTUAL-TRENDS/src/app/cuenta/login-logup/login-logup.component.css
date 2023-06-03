@@ -10,50 +10,77 @@
     background-color: rgba(255, 255, 255, 0.8);
 }
 .contenedor-in {
-    font-family: Helvetica, Arial, sans-serif;
-    background-color: #f7f7f2;
-    margin: 5% auto;
-    box-shadow: 0px 6px 10px 3px rgba(0, 0, 0, 0.08);
-    backdrop-filter: blur(12px);
-    width: 500px;
-    height: 475px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    position: relative;
+    font-family: 'Archivo','sans-serif';
+    background-color: #F8F8F8;
+    margin: 5% auto 0 auto;
+    box-shadow: 0px 6px 10px 3px rgba(0, 0, 0, 0.08);
+    max-width: 35em;
+    min-width: 100px;
+    height: auto;
     border-radius: 5px;
     border: 2px solid #575757;
-    gap: 40px;
-    align-items: center;
+    gap: 1.5em;
+
 }
 
 .head-in{
     display: flex;
-    justify-content: space-between;
     width: 100%;
+    justify-content: right;
 }
 
 .close-in{
     width: 22px;
     height: 22px;
     border-radius: 6px;
+    margin: 15px 15px 0 0;
     border: 1px solid #575757;
-    margin-right: 15px;
-    margin-top: 15px;
+    background-image: url(../../../assets/CRUZ.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    transition: background-image 0.3s;
 }
 
 .close-in:hover{
-    background-color: #575757;
-    color: #f7f7f2;
-    
+    background-image: url(../../../assets/CRUZ-CLARA.png);
+}
+
+.subtitle-in{
+    color: #575757;
+    font-family:'Archivo','sans-serif';
+    margin-top: 1em;
+    align-items: center;
+    font-size: 1em;
 }
 
 .title-in{
-    color: #575757;
-    font-family:Arial, Helvetica, sans-serif;
+    margin-top: auto; /* Ajusta el margen superior según sea necesario */
+    margin-bottom: 0.5em;
+    text-align: center; /* Centra el texto horizontalmente */
+    margin-top: 0.5em; /* Ajusta el margen superior según sea necesario */
+}
+
+
+#titulo-cuenta {
+    border-top: 1px solid #575757;
+    border-bottom: 1px solid #575757;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    align-items: center;
+    font-family:'Josefin Sans','sans-serif';
+    margin-top: 1.5em;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.5em;
+    line-height: 2em;
     font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 16px;
-    margin-top: 30px;
+    color: #575757;
+    padding: 15px 0px 10px;
+    width: 80%;
 }
 
 .btn-in{
@@ -64,6 +91,7 @@
     color: #575757;
     font-weight: bold;
     background-color: #ffffff;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .btn-in:hover{
@@ -80,7 +108,15 @@
     border: none;
     font-weight: bold;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+    margin-bottom: 30px;
 }
+
+.text-in {
+    text-align: center;
+    width: 300px;
+}
+
 .btn-up:hover{
     background-color: #ffffff;
     color: #575757;
@@ -93,14 +129,17 @@
 }
 .recu-in{
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 12px;
     line-height: 12px;
     display: flex;
     align-items: center;
     text-decoration: none;
+    border: 0px;
     color: #575757;
+    margin-bottom: 20px;
 }
+
 .form-in{
     display: flex;
     flex-direction: column;
@@ -116,4 +155,10 @@
     top: 20px;
     padding-left: 10px;
     margin-left: 10px;
+}
+
+@media screen and (max-width: 575px) {
+    .contenedor-in {
+        margin: 10px;
+    }
 }

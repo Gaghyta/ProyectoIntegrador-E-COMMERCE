@@ -9,6 +9,17 @@ export class HeaderComponent implements OnInit {
   /*isVisible = false;*/
   constructor(){}
   ngOnInit(): void {
-      
+  }
+
+  navigate() {
+    this.navigationService.navigateToProducts();
+  }
+
+  navigateContacto(){
+    this.navigationService.navigateToContacto();
+  }
+
+  navigateToCuenta(){
+    this.navigationService.navigateToCuenta();
   }
 }

@@ -1,0 +1,60 @@
+*{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+
+.carrito {
+    text-align: center;
+    background-image: url();
+    border: 2px solid #3b3d40;
+    border-radius: 3%;
+    padding: 20px;
+    width: 450px;
+    transform: translate(-50%, -0%);
+    margin-top: 1%;
+    margin-left: 50%;
+  }
+  
+  .titulo{
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    font-weight: 400;
+    font-size: 54 bold;
+    border-top-color: #3b3d40;
+    border-bottom-color: #3b3d40;
+    size: 500px;
+  }
+  .lista {
+    background-color: #F7F7F2;
+    border: 1px solid #575757;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 3%;
+  }
+  
+  .subtotal {
+    background-color: #F7F7F2;
+    color: #3b3d40;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 3%;
+  }
+  
+  .volver {
+    margin-top: 20px;
+    border-radius: 3%;
+  }
+  
+  button {
+    background-color: #F7F7F2;
+    border: 2px solid #3b3d40;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 3%;
+  }
+  
+  button:hover {
+    background-color: #575757;
+    color: #F7F7F2;
+  }
+  

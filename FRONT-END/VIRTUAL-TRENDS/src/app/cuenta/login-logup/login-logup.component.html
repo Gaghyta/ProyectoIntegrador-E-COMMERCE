@@ -1,20 +1,25 @@
 <div class="modal-in">
     <div class="contenedor-in">
         <div class="head-in">
-            <div></div>
-            <h1 class="title-in">INICIAR SESIÓN</h1>
-            <button class="close-in">X</button>
+            <div class="d-flex justify-content-center">
+                <button (click)="closePopUp()" class="close-in"></button>
+            </div>
         </div>
+        <h1 class="title-in-" id="titulo-cuenta">LOGIN</h1>
+        <h3 class="subtitle-in">INICIAR SESIÓN</h3>
         <form class="form-in">
             <label class="lab-in">Dirección de correo electrónico</label>
             <input type="email" class="inp-in">
             <label class="lab-in">Contraseña</label>
             <input type="password" class="inp-in">
-            <a class="recu-in" href="">¿No puedes acceder a tu cuenta?</a>
+            <button type="button" class="recu-in" (click)="showRecoverPass()">¿No puedes acceder a tu cuenta?</button>
+            <p class="text-in" *ngIf="showRecoverPassText">Consulte con los administradores del sitio web para que le indiquen cómo proseguir.
+                Puede encontrar nuestras redes sociales en la parte inferior de la página.
+            </p>
             <input type="submit" class="btn-in" value="INICIAR SESIÓN">
         </form>
-        <div>
-        <button class="btn-up">CREAR CUENTA</button>
+        <div class="boton_crear_cuenta">
+            <button type="button" (click)="navigateToRegistro()" class="btn-up">CREAR CUENTA</button>
         </div>
     </div>
 </div>

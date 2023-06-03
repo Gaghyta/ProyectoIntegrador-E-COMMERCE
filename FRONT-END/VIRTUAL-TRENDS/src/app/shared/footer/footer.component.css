@@ -29,6 +29,8 @@
 }
 
   .ca-footer {
+    flex-direction: column;
+    position: relative;
     font-family: 'Archivo',sans-serif;
     width: 100%;
     display: flex;
@@ -133,6 +135,7 @@
   }
   
   .ca-grid_item_center {
+    align-items: center;
     width: 100%;
     /*margin-bottom: 0.75rem;*/
     display: inline;
@@ -145,6 +148,148 @@
     margin-bottom: 0.75rem;
     text-align: left;
   }
+
+  /* CSS para NEWSLETTER*/
+
+  .newsletter {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 53%;
+    margin-top: 1.25em;
+    width: 35em;
+    height: 40px;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+  }
+  
+  .newsletter-title {
+    font-size: 1.25em;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.25em;
+    color: #3B3D40;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  
+  .newsletter-input {
+    font-family: 'Archivo', sans-serif;
+    border: 1px solid #646363;
+    display: flex;
+    align-items: center;
+  }
+  
+  .newsletter-input input {
+    flex: 1;
+    height: 100%;
+    padding: 0 10px;
+    border: none;
+    font-size: 14px;
+    color: #877873;
+    border: none; /* Elimina el borde */
+    background-color: transparent; /* Establece el fondo transparente */
+    border-radius: 0;
+  }
+  
+  .newsletter-input input:focus {
+    box-shadow: none; /* Elimina el estilo de sombra en el enfoque */
+    border: none; /* Elimina un borde en el enfoque */
+    outline: none; /* Elimina línea en el estilo de enfoque */
+    -webkit-appearance: none; /* Desactiva los estilos de apariencia del navegador */
+    -moz-appearance: none;
+    appearance: none;
+  }
+  
+  .btn-dark{
+    background-color: #646363;
+    font-style: normal;
+    color: #F7F7F2;
+    border-radius: 1%;
+    left: 8.76%;
+    right: 9.73%;
+    top: 42.22%;
+    bottom: 31.11%;
+    font-size: 1.25em;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+  }
+
+  .newsletter-input .btn .btn-dark {
+    cursor: pointer;
+    width: 112px;
+    height: 40px;
+    font-family: 'Josefin Sans', sans-serif;
+    color:#646363;
+    border-radius: 1%;
+  }
+
+  .newsletter-input .btn .btn-dark:hover {
+    color: #191B1D;
+    background-color: #646363;
+    border: none;
+  }
+
+  .newsletter-input .btn .btn-dark:active {
+    color:#646363;
+    background-color: #F7F7F2;
+    border: none;
+  }
+
+/* position: absolute;
+left: 8.76%;
+right: 9.73%;
+top: 42.22%;
+bottom: 31.11%;
+
+font-family: 'Josefin Sans';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 12px;
+or 100% 
+
+text-align: center;
+letter-spacing: 0.18em;
+
+ VT-Blanco-Crema_Margiela 
+
+color: #F7F7F2;
+
+  
+  */
+
+
+  /*
+  .btn-dark {
+    cursor: pointer;
+    width: 100%;
+    background: #3B3D40;
+    color: #F7F7F2;
+    font-weight: 400;
+    font-size: 11px;
+    font-family: 'archivo';
+    border-radius: 3px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+    transition: background-color .5s;
+    font-size: 16px;
+    margin-bottom: 10%;
+  }
+
+  .btn-dark:hover {
+    background: #FFFFFF;
+    color: #3B3D40;
+  }
+
+  .btn-dark:active {
+    background: #3B3D40;
+    color: #FFFFFF;
+  }*/
+
+
+
+
+
 
   @media screen and (min-width: 768px) {
     .ca-grid_item {

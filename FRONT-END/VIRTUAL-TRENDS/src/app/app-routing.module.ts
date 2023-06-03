@@ -16,18 +16,25 @@ const routes: Routes = [
   // Rutas de los componentes
   { path: 'home', component: DashboardHomeComponent },
   // { path: 'login', component: LoginComponent },
+  { path: 'cuenta', component: LoginLogupComponent },
   // { path: 'register', component: RegisterComponent },
-  // { path: 'product/:id', component: DashboardProductsComponent },
-  { path: 'product', component: DashboardProductsComponent },
+  { path: 'registro', component: RegistroComponent },
+  // { path: 'product/:id', component: DashboardIndividualProductComponent },
+  { path: 'product', component: DashboardIndividualProductComponent },
+  { path: 'products', component: DashboardAllProductsComponent},
   { path: 'sistema-de-talla', component: PanelDeControlComponent },
   { path: 'talla-personalizada', component: TallaPersonalizadaComponent },
   { path: 'talla-estandar', component: TallaEstandarComponent },
   // { path: 'cart', component: CartComponent },
   { path: 'contacto', component: DashboardContactoComponent },
+
+    // Ruta para la página 404 cuando no encuentre la URL
+  { path: '404', component: ErrorPageComponent },
+  { path: '**', pathMatch: 'full', redirectTo: '/404'},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),CuentaModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

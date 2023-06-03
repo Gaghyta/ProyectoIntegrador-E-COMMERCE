@@ -1,0 +1,20 @@
+<div class="products-container">
+  <div *ngFor="let product of products; odd as isOdd; even as isEven;" id="{{product.id}}" class="card-container" [ngClass]="{'odd': isOdd, 'even': isEven}">
+    <img class="picture" src="{{product.icon}}" alt="" (click)="navigate('id_producto', product.id)" title="Ver {{product.name}}">
+    <div class="text-container">
+      <div (click)="navigate('id_producto', product.id)">
+        <h1>{{product.name}}</h1>
+        <p class="price">Precio: <b>${{product.price}}</b></p>
+      </div>
+      <div class="amount-buttons" *ngIf="hasAmount">
+        <button (click)="substract($event)" id="substract-button-{{product.id}}" [disabled]="(product.amount === 0)">-</button>
+        <div>{{product.amount}}</div>
+        <button (click)="add($event)" id="add-button-{{product.id}}">+</button>
+      </div>
+    </div>
+    <div class="favorite-buttons-container" *ngIf="hasFavorite">
+      <img (click)="actionateFavorite($event)" *ngIf="(product.favorite)" id="favorite-active-button-{{product.id}}" class="favorite-pic" src="/assets/Banderin-Activo.png" alt="Desmarcar como favorito" title="Desmarcar como favorito">
+      <img (click)="actionateFavorite($event)" *ngIf="(!product.favorite)" id="favorite-inactive-button-{{product.id}}" class="favorite-pic" src="/assets/Banderin-inactivo.png" alt="Marcar como favorito" title="Guardar como favorito">
+    </div>
+  </div>
+</div>

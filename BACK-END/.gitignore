@@ -1,0 +1,9 @@
+#ENTORNO-VIRTUAL
+env/
+
+#PYTHON ARCHIVOS 
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+migrations/

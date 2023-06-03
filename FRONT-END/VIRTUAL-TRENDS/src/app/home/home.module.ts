@@ -8,7 +8,7 @@ import { HomeImagesComponent } from './home-images/home-images.component';
 @NgModule({
   declarations: [DashboardHomeComponent,SectionsDescriptionsComponent, HomeImagesComponent],
   imports: [
-    CommonModule
+    CommonModule,
   ]
 })
 export class HomeModule { }
