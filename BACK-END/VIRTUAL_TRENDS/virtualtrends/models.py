@@ -1,3 +1,4 @@
+
 from django.db import models
 
 # Tabla para agregar los niveles de usuario/rol que cumplen.
@@ -311,7 +312,7 @@ class Newsletter(models.Model):
     def __str__(self):
         return self.email
 
-# Productos en el carrito. 
+# Productos en el carrito.
 
 class ProductosEnCarrito(models.Model):
     id_prod = models.ForeignKey(Productos, to_field='id_prod', on_delete=models.CASCADE)
@@ -327,4 +328,3 @@ class ProductosEnCarrito(models.Model):
         return (self.id_car, self.id_prod)
     def __str__(self):
         return "El carrito "+str(self.id_car)+" tiene "+str(self.cantidad)+" del producto "+str(self.id_prod)
-
