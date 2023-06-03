@@ -1,0 +1,152 @@
+* {
+  color: #575757;
+}
+
+
+.formulario-edicion{
+  width: 50%;
+  margin-left: 25%;
+  position: relative;
+  background-color: #F8F8F8;
+  border: 2px solid #575757;
+  border-radius: 6px;
+}
+
+.editar-cuenta {
+  font-family: 'Josefin Sans';
+  font-size: 26px;
+  letter-spacing: 0.075cm;
+  border-top: 2px solid #575757;
+  border-bottom: 2px solid #575757;
+  line-height: 40px;
+  font-weight: 500;
+  padding: 5px 12px 0px;
+  width: 70%;
+  text-align: center;
+  margin-left: 15%;
+  margin-top: 7%;
+}
+
+.container-form {
+  margin-left: 25%;
+  margin-top: 5%
+}
+
+.container-texto{
+  position: relative;
+  background-color: #FFFFFF;
+  height: 40px;
+  border: 1px solid #575757;
+  font-family: 'archivo';
+  font-style: normal;
+  border-radius: 6px;
+  margin-bottom: 30px;
+  width: 80%;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 13px;
+  display: flex;
+  align-items: center;
+  color: #191B1D;
+}
+
+.container-texto>h2{
+  font-family: 'Archivo';
+  position: absolute;
+  display: inline-block;
+  margin-left: 2%;
+  padding: 0 10px;
+  top: -7px;
+  background-color: #F7F7F2;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 13px;
+  display: flex;
+  align-items: center;
+  width: 95%;
+  z-index: 5;
+}
+
+.input-container>input{
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 8%;
+  width: 96%;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 12px;
+  display: flex;
+}
+
+.input {
+  margin: 0;
+  height: 100%;
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+.btn-dark {
+  cursor: pointer;
+  padding: 10px 0px 8px;
+  width: 80%;
+  background: #3B3D40;
+  color: #F7F7F2;
+  font-weight: 500;
+  border-radius: 3px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+  transition: background-color .5s;
+  font-size: 11px;
+  margin-bottom: 7%;
+}
+
+.btn-dark:hover {
+  background: #FFFFFF;
+  color: #3B3D40;
+}
+
+
+
+@media (max-width: 769px) {
+  .container-texto {
+    margin: 0 auto;
+    width: 75%;
+  }
+  .formulario-edicion {
+    width: 75%;
+    margin-left: 0%;
+    margin-bottom: 10%;
+    justify-content: center;
+    margin-right: 0%;
+  }
+  .editar-cuenta, .container-texto {
+    width: 65%;
+    margin-left: 15%;
+    margin-bottom: 10%;
+    justify-content: center;
+  }
+  .container-form {
+    width: 65%;
+  }
+  .container-texto>h2 {
+    margin-left: 0%;
+  }
+  .input-container{
+    width: 65%;
+    margin-left: 0%;
+    padding-left: 0%;
+  }
+  .container-texto>texto-largo {
+    display: block;
+    margin-bottom: 20%;
+  }
+  .btn-dark {
+    width: 65%;
+    margin-left: 15%;
+    justify-content: center;
+    margin-bottom: 10%;
+  }
+}
