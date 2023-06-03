@@ -1,98 +1,46 @@
 <header class="ca-header">
-  <nav class="navbar">
-    <div class="navbar-logo">
-      <a href="/home">
-        <img src="./assets/LOGO-VT.png" alt="Logo de Virtual Trends">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/home">
+        <img src="./assets/LOGO-VT.png" alt="Logo de Virtual Trends" class="navbar-logo">
       </a>
-    </div>
-    <div class="navbar-container">
-      <ul>
-        <li>
-          <a (click)="navigate()" class="ca-boton">Productos</a>
-        </li>
-        <li>
-          <a (click)="navigateToContacto()" class="ca-boton ca-boton_ocultar">Contacto</a>
-        </li>
-        <li>
-          <a routerLink="/ruta-del-enlace" class="ca-boton">Carrito</a>
-        </li>
-        <li>
-          <a routerLink="/ruta-del-enlace" class="ca-boton ca-boton_ocultar">Nosotros</a>
-        </li>
-        <li>
-          <a routerLink="/ruta-del-enlace" class="ca-boton ca-boton_ocultar">Comunidad</a>
-        </li>
-        <li><a (click)="navigateToCuenta()" class="ca-boton">Cuenta</a></li>
-        <!-- <div class="dropdown">
-          <a href="#" class="ca-boton dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Menú
-          </a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a routerLink="/ruta-del-enlace" class="dropdown-item">Productos Hombre</a>
-            <a routerLink="/ruta-del-enlace" class="dropdown-item">Productos Mujer</a>
-          </div>
-        </div> -->
-      </ul>
-    </div>
-  </nav>
-  <!-- <script>
-    // código JS para el dropdown menu
-    document.addEventListener("DOMContentLoaded", function () {
-  var dropdownMenus = document.getElementsByClassName('dropdown-menu');
-  var dropdownToggles = document.getElementsByClassName('dropdown-toggle');
-    for (var i = 0; i < dropdownToggles.length; i++) {
-      dropdownToggles[i].addEventListener('click', function (e) {
-        e.preventDefault();
-        var dropdownMenu = this.nextElementSibling;
-        this.classList.toggle('active');
-        dropdownMenu.classList.toggle('active');
-      });
-    }
-  });
-</script>
--->
-  
-</header>
-
-
-
-<!-- <header class="ca-header">
-  <nav class="navbar">
-    <div class="navbar-container">
-      <div class="navbar-logo">
-        <a href="/home">
-          <img src="./assets/LOGO-VT.png" alt="Logo de Virtual Trends">
-        </a>
-      </div>
-      <ul>            
-        <li>
-          <a routerLink="/ruta-del-enlace" class="ca-boton">Productos</a>
-        </li>
-        <li>
-          <a routerLink="/ruta-del-enlace" class="ca-boton">Carrito</a>
-        </li>
-        <li>
-          <a routerLink="/ruta-del-enlace" class="ca-boton">Nosotros</a>
-        </li>
-        <li>
-          <a routerLink="/ruta-del-enlace" class="ca-boton">Comunidad</a>
-        </li>
-        <li><a routerLink="/ruta-del-enlace" class="ca-boton">Cuenta</a></li>
-        <div class="dropdown">
-          <a href="#" class="ca-boton dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Menú
-          </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item" (click)="navigate()">
+              <a class="nav-link" routerLink="/productos">Productos</a>
+            </li>
+            <li class="nav-item" (click)="navigateToContacto()">
+              <a class="nav-link" routerLink="/ruta-del-enlace">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/ruta-del-enlace">Carrito</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/ruta-del-enlace">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/ruta-del-enlace">Comunidad</a>
+            </li>
+            <li class="nav-item" (click)="navigateToCuenta()">
+              <a class="nav-link">Cuenta</a>
+            </li>
+          </ul>
         </div>
-      </ul>
-      
       </div>
+    </div>
   </nav>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a routerLink="/ruta-del-enlace" class="dropdown-item">Productos Hombre</a>
-    <a routerLink="/ruta-del-enlace" class="dropdown-item">Productos Mujer</a>
-  </div>
 </header>
- -->
+
+
+
+
+
+
+
 
 
 

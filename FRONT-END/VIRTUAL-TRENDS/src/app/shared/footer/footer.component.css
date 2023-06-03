@@ -1,33 +1,8 @@
-/* .ca-footer {
-    font-family: 'Josefin Sans', sans-serif;
-    color: #575757;
-    display: flex;
-    justify-content: space-between;
-    padding: 40px 80px;
-  }
-  
-  .ca-grid__item {
-    margin-right: 20px;
-  }
-  
-  .ca-footer_text {
-    font-size: 12px;
-    font-weight: 500;
-    color: #191B1D;
-  }
-  
-  .rk-menu.rk-footer-menu a {
-    color: #191B1D;
-    font-size: 12px;
-    font-weight: 500;
-  } */
-
   /* Estilos para el footer */
 *{
   background-color:#F7F7F2;
   
 }
-
   .ca-footer {
     flex-direction: column;
     position: relative;
@@ -38,6 +13,13 @@
     font-family: 'Archivo', sans-serif;
     font-size: 0.75rem;
     color: #575757;
+    margin: 0;
+    padding: 0;
+  }
+  .ca-grid_item_left,
+  .ca-grid_item_center,
+  .ca-grid_item_right {
+    margin-top: 0;
   }
   
   .ca-footer__text {
@@ -113,6 +95,7 @@
   .ca-footer_copy {
     margin-top: 10em;
     text-align: center;
+    order: 2;
   }
   
   /* Grid */
@@ -138,8 +121,20 @@
     align-items: center;
     width: 100%;
     /*margin-bottom: 0.75rem;*/
+    /*display: inline;*/
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ca-grid_item_center_newsletter{
+    align-items: center;
+    margin: 5% 5% 5% 5%;
+    width: 80%;
     display: inline;
     text-align: center;
+    flex-grow: 1;
+    flex-basis: 0;
   }
 
   .ca-grid_item_left {
@@ -152,15 +147,16 @@
   /* CSS para NEWSLETTER*/
 
   .newsletter {
-    position: absolute;
+    /*position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 53%;
+    bottom: 53%;*/
     margin-top: 1.25em;
-    width: 35em;
-    height: 40px;
+    width: 100%;
+    /*height: 40px;*/
     font-family: 'Josefin Sans', sans-serif;
     text-transform: uppercase;
+    order: 1;
   }
   
   .newsletter-title {
@@ -236,61 +232,6 @@
     border: none;
   }
 
-/* position: absolute;
-left: 8.76%;
-right: 9.73%;
-top: 42.22%;
-bottom: 31.11%;
-
-font-family: 'Josefin Sans';
-font-style: normal;
-font-weight: 500;
-font-size: 12px;
-line-height: 12px;
-or 100% 
-
-text-align: center;
-letter-spacing: 0.18em;
-
- VT-Blanco-Crema_Margiela 
-
-color: #F7F7F2;
-
-  
-  */
-
-
-  /*
-  .btn-dark {
-    cursor: pointer;
-    width: 100%;
-    background: #3B3D40;
-    color: #F7F7F2;
-    font-weight: 400;
-    font-size: 11px;
-    font-family: 'archivo';
-    border-radius: 3px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
-    transition: background-color .5s;
-    font-size: 16px;
-    margin-bottom: 10%;
-  }
-
-  .btn-dark:hover {
-    background: #FFFFFF;
-    color: #3B3D40;
-  }
-
-  .btn-dark:active {
-    background: #3B3D40;
-    color: #FFFFFF;
-  }*/
-
-
-
-
-
-
   @media screen and (min-width: 768px) {
     .ca-grid_item {
       width: 30%;
@@ -300,4 +241,31 @@ color: #F7F7F2;
     .ca-grid_center {
       width: 40%;
     }
+
   }
+
+  @media screen and (max-width: 429px){
+    .ca-grid {
+      grid-template-columns: 1fr;
+      justify-content: center; /* Centra los elementos en la columna */
+    }
+    .ca-grid_item_center {
+      width: 100%; /* Asegura que ocupe todo el ancho disponible */
+      margin-top: 20px; /* Ajusta el margen superior según tus necesidades */
+      order: 1;
+    }
+    .newsletter {
+      width: 80%;
+      margin: 5% 5% 5% 5%;
+    }
+    
+    .ca-grid_item_left {
+      display: none;
+    }
+    .ca-grid_item_right {
+      display: none;
+    }
+    
+
+  }
+  
