@@ -1,113 +1,248 @@
-.ca-header {
-    display: flex;
-    background-color: #F7F7F2;
-    position: relative;
-    /*height: 80px;*/
-    /*height: 20vh;/* Establece la altura del navbar */
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    align-items: center;
+/*.ca-header {
+  display: flex;
+  background-color: #F7F7F2;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  width: 7rem;
+  height: auto;
+  float: left;
+  flex-shrink: 0;
+  margin-right: 1rem;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1em;
+  color: #575757;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin: 0 1rem;
+}
+
+.ca-boton {
+  text-decoration: none;
+  color: #575757;
+  transition: color 0.5s;
+}
+
+.ca-boton:hover {
+  color: #1c1b1b;
+  text-decoration: underline #1c1b1b;
+  text-underline-offset: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.navbar-toggler {
+  display: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  height: 2em;
+  width: 30px;
+}  
+*/
+
+/*
+@media only screen and (max-width: 768px) {
+
+  .ca-hamburguesa-menu {
+    margin-right: 2rem; Ajusta el margen según sea necesario 
   }
-  
+
+
   .navbar {
-    /*background-color: hsla(15, 8%, 49%, 0.502);*/
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5em;
+    flex-direction: row;
+    align-items: flex-end;
   }
+
+  .navbar-container {
+    width: 80%;
+    padding: 0;
+  }
+
   .navbar-logo {
-    width: 7rem;
+    margin: 0 0 1rem 0;
+    flex-shrink: 0;
+  }
+
+  .navbar-toggler {
+    display: block;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    height: 2em;
+  }
+
+  .navbar-toggler-icon {
+    display: inline-block;
+    width: auto;
     height: auto;
-    float: left;
-    margin-right: 0.2rem; /* ajusta el margen según sea necesario */
+    background-color: #1c1b1b;
+    border-radius: 2px;
+  }
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    padding: 0;
+    margin-top: 1rem;
+  }
+  .navbar-collapse {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .navbar-toggler {
+    margin-left: auto;
+ 
+  }
+  .navbar-toggler-icon {
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    background-color: #1c1b1b;
+    border-radius: 2px;
+  }
+
+
+  .navbar-toggler.active {
+    display: flex;
+    justify-content: flex-end;
   }
   
   .navbar ul {
-    list-style: none;
+    display: none;
+  }
+
+  .navbar-collapse {
     display: flex;
-    align-items: center;
-    font-family: 'Josefin Sans', sans-serif;
-    color: #575757;
-    text-transform: uppercase;
-    margin: 0;
-    padding: 0;
+    justify-content: flex-end;
   }
-  
-  .navbar li {
-    margin: 0 2rem;
+
+  .navbar-toggler {
+    margin-left: auto;
+ 
   }
-  
-  .ca-boton {
-    text-decoration: none;
-    color: #575757;
-    transition: color 0.5s;
-  }
-  
-  .ca-boton:hover {
-    color:#1c1b1b;
-    text-decoration: underline #1c1b1b;
-    text-underline-offset: 6px; 
-    font-weight: 600;
-    cursor: pointer;
-  }
-  
-  /* .dropdown {
-    position: relative;
+  .navbar-toggler-icon {
     display: inline-block;
-    text-transform: uppercase;
+    width: 20px;
+    height: 2px;
+    background-color: #1c1b1b;
+    border-radius: 2px;
   }
-  
-  .dropbtn {
-    background-color: transparent;
-    color: #575757;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.2rem;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    z-index: 1;
-    background-color: #242526;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    border-radius: 5px;
-  }
-  
-  .dropdown-content a {
-    color: white;
-    padding: 12px 16px;
-  }
-   */
 
-   @media only screen and (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .navbar-container {
-      width: 80%;
-      padding: 0;
-    }
-  
-    .navbar-logo {
-      margin: 0 0 1rem 0;
-    }
-  
-    .navbar li {
-      margin: 10px 0;
-    }
-
-    .navbar ul li:nth-child(3) {
-    display: none;
-    }
-
-
+  .navbar-toggler.active + .navbar-collapse {
+    display: flex;
   }
+}*/
+
+/* OPCION 2 CON BOOSTRAP
+
+.ca-header {
+  display: flex;
+  background-color: #F7F7F2;
+  justify-content: center;
+  align-items: center;
+  height: 20vh; 
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  width: 7rem;
+  height: auto;
+  flex-shrink: 0;
+  margin-right: 1rem;
+}
+
+.navbar-toggler {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar-nav {
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #575757;
+  transition: color 0.5s;
+}
+
+.nav-link:hover {
+  color: #1c1b1b;
+  text-decoration: underline #1c1b1b;
+  text-underline-offset: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}*/
+
+.ca-header {
+  background-color: #F7F7F2;
+  padding: 20px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  width: 7rem;
+  height: auto;
+  margin-right: 1rem;
+}
+
+.navbar-toggler {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar-nav {
+  align-items: center;
+  margin-right: 0;
+  justify-content: space-between;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #575757;
+  transition: color 0.5s;
+  font-size: 1.1rem; 
+  text-transform: uppercase;
+  margin: 0 0.5em;
+}
+
+.nav-link:hover {
+  color: #1c1b1b;
+  text-decoration: underline #1c1b1b;
+  text-underline-offset: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
