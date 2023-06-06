@@ -1,5 +1,6 @@
 #ENTORNO-VIRTUAL
 env/
+CAdjango
 
 #PYTHON ARCHIVOS 
 __pycache__/
