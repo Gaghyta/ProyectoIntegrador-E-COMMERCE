@@ -5,7 +5,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .serializers import LoginSerializer, ProductSerializer, ColorProducSerializer, ImgProducSerializer
 from rest_framework import status
-from .models import Login, Usuario, Productos, ColoresProductos, ImagenesProducto, Colores, Talla, TallaDelProducto, ProductosEnCarrito
+from .models import Login, Usuario, Productos, ColoresProductos, ImagenesProducto, Colores, Talla, TallaDelProducto, ProductosEnCarrito, Carrito
+from django.db.models import Q
 
 
 # Create your views here.
@@ -80,11 +81,13 @@ class ProductoAlCarritoView (View):
 
         dni = request.data.get('id_usuario')
         try:
-            carrito = Carrito.objects.get(dni=dni)
-            id_car = carrito.id_car
+            carrito = carrito.objects.get(dni=dni)
+            if(carrito.concretado==True):
+                raise(Exception)
+            id_car = Carrito.id_car
         except Carrito.DoesNotExist:
             carrito = Carrito.objects.create(dni=dni)
-            id_car = carrito.id_car
+            id_car = Carrito.id_car
 
         producto_en_carrito = ProductosEnCarrito(
             id_prod=request.data.get('id_producto'),
@@ -99,9 +102,26 @@ class ProductoAlCarritoView (View):
 
     def put (self, request):
         pass
-    def delelte (self, request):
+    def delete (self, request):
         pass
     
+class ConsultProductoCarrito(View):
+    def get(self, request):
+        dnitemp = request.GET.get('dni')
+        carrito = Carrito.objects.filter(dni=dnitemp, concretado=False).first()
+
+        if carrito:
+            productos_en_carrito = ProductosEnCarrito.objects.filter(id_car=carrito.id_car)
+            return JsonResponse(productos_en_carrito)
+        return JsonResponse({'error': 'Aun no tienes articulos en tu carrito'}, status=status.HTTP_404_BAD_REQUEST)
+    def post (self, request):
+        pass
+    def put (self, request):
+        pass
+    def delete (self, request):
+        pass
+    
+
 class LoginListView(APIView):
     def get(self, request):
         logins = Login.objects.all()
