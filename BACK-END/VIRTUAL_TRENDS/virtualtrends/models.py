@@ -318,7 +318,7 @@ class ProductosEnCarrito(models.Model):
 
 # LISTA DE DISTRIBUCIÓN NEWSLETTER 
 class Newsletter(models.Model):
-    email = models.CharField(max_lengh=50, primary_key=True)
+    email = models.CharField(max_length=50, primary_key=True)
     class Meta:
         db_table= 'newsletter'
         verbose_name = 'Lista de emails para distribución  de Nesletter Virtual Trends'
