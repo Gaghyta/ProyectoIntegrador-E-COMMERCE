@@ -11,7 +11,20 @@
         <p>Lista de productos</p>    
     </div>
     <div class="lista">
-      
+      <table>
+        <tr>
+          <th>Nombre</th>
+          <th>Color</th>
+          <th>Cantidad</th>
+          <th>Precio</th>
+        </tr>
+        <tr *ngFor="let producto of productos">
+          <td>{{ producto.nombre }}</td>
+          <td>{{ producto.color }}</td>
+          <td>{{ producto.cantidad }}</td>
+          <td>{{ producto.precio }}</td>
+        </tr>
+      </table>
     </div>
     <div class="subtotal">
       <p>Subtotal: Perro</p>
