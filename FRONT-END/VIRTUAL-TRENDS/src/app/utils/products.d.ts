@@ -36,4 +36,11 @@ export namespace Products {
     type Colors = null | 'dark-red' | 'dark-green' | 'dark-blue' | 'purple-grey' | 'orange' | 'coral' | 'cyan' | 'black' | 'white';
 
     type Sizes = 'XS' | 'S' | 'M' | 'L' | 'XL' | 'XXL' | 'XXXL';
+
+    export interface ProductData {
+        name: string;
+        description: string;
+        colors: Colors[];
+        pictures: Pictures[];
+    }
 }

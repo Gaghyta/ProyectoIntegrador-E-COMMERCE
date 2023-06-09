@@ -1,7 +1,7 @@
 <div>
     <div class="popup-box">
 
-        <div class="formulario">
+        <form [formGroup]="form" (ngSubmit)="onEnviar($event)" class="formulario">
 
             <div class="popup-title-container  row">
 
@@ -13,62 +13,57 @@
 
                     <div class="input-container text-container" id="first-textbox">
                         <h1>Contorno cuello</h1>
-                        <input class="vertical-center" type="number">
+                        <input class="vertical-center" type="number" formControlName="cuello">
         
                     </div>
                     <div class="input-container text-container">
                         <h1>Contorno de busto</h1>
-                        <input class="vertical-center" type="number">
-        
-                    </div>
-                    <div class="input-container text-container">
-                        <h1>Largo de talle</h1>
-                        <input class="vertical-center" type="number">
-        
-                    </div>
-                    <div class="input-container text-container">
-                        <h1>Contorno cintura</h1>
-                        <input class="vertical-center" type="number">
-        
-                    </div>
-                    <div class="input-container text-container">
-                        <h1>Contorno cadera</h1>
-                        <input class="vertical-center" type="number">
-        
-                    </div>
-                    <div class="input-container text-container">
-                        <h1>Largo de manga</h1>
-                        <input class="vertical-center" type="number">
-        
-                    </div>
-                    <div class="input-container text-container">
-                        <h1>Contorno de muñeca</h1>
-                        <input class="vertical-center" type="number">
-        
-                    </div>
-                    <div class="input-container text-container">
-                        <h1>Largo de pierna</h1>
-                        <input class="vertical-center" type="number">
-        
-                    </div>
-                    <div class="input-container text-container">
-                        <h1>Altura de rodilla</h1>
-                        <input class="vertical-center" type="number">
+                        <input class="vertical-center" type="number" formControlName="busto">
         
                     </div>
                     <div class="input-container text-container">
                         <h1>Contorno de rodilla</h1>
-                        <input class="vertical-center" type="number">
+                        <input class="vertical-center" type="number" formControlName="conRodilla">
+        
+                    </div>
+                    <div class="input-container text-container">
+                        <h1>Largo de talle</h1>
+                        <input class="vertical-center" type="number" formControlName="largTalle">
+        
+                    </div>
+                    <div class="input-container text-container">
+                        <h1>Contorno de cintura</h1>
+                        <input class="vertical-center" type="number" formControlName="conCintura">
+        
+                    </div>
+                    <div class="input-container text-container">
+                        <h1>Contorno de cadera</h1>
+                        <input class="vertical-center" type="number" formControlName="conCadera">
+        
+                    </div>
+                    <div class="input-container text-container">
+                        <h1>Largo de manga</h1>
+                        <input class="vertical-center" type="number" formControlName="largManga">
+        
+                    </div>
+                    <div class="input-container text-container">
+                        <h1>Contorno de muñeca</h1>
+                        <input class="vertical-center" type="number" formControlName="conMuneca">
+        
+                    </div>
+                    <div class="input-container text-container">
+                        <h1>Largo de pierna</h1>
+                        <input class="vertical-center" type="number" formControlName="largPierna">
         
                     </div>
                     <div class="input-container text-container" id="last-textbox">
-                        <h1>Contorno de tobillo</h1>
-                        <input class="vertical-center" type="number">
+                        <h1>Altura de rodilla</h1>
+                        <input class="vertical-center" type="number" formControlName="alturaRodilla">
         
                     </div>
                         
                     <div class="input-container">
-                        <button class="btn btn-dark" (click)="agregar_al_carrito()">ENVIAR</button>
+                        <button class="btn btn-dark" type="submit" (click)="agregar_al_carrito()">ENVIAR</button>
                     </div>
 
                 </div>
@@ -100,7 +95,7 @@
                 <button class="close-button" (click)="cerrarPersonalizado()"></button>
             </div>
 
-        </div>
+        </form>
 
     </div>
 

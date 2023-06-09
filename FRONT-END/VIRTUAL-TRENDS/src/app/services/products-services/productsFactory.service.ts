@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from "rxjs";
-import { map } from "rxjs/operators";
 import { Products } from 'src/app/utils/products';
 
 @Injectable({
@@ -8,6 +7,12 @@ import { Products } from 'src/app/utils/products';
 })
 export class ProductsFactoryService {
   private productsList = new BehaviorSubject<Products.Product[]>([]);
+  private product = new BehaviorSubject<Products.ProductData>({
+    name: '',
+    description: '',
+    pictures: [],
+    colors: []
+  });
 
   constructor() { }
 
@@ -17,5 +22,9 @@ export class ProductsFactoryService {
 
   getProducts() {
     return this.productsList;
+  }
+
+  saveProduct(product: Products.ProductData) {
+    this.product.next(product);
   }
 }

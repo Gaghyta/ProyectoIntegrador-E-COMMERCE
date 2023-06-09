@@ -11,6 +11,7 @@ import { ProductsModule } from './products/products.module';
 import { SistemaDeTallaModule } from './sistema-de-talla/sistema-de-talla.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CarritoModule } from './carrito/carrito.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { CarritoModule } from './carrito/carrito.module';
     SharedModule,
     HttpClientModule,
     CarritoModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

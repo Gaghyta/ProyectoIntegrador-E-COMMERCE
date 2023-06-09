@@ -5,9 +5,9 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .serializers import LoginSerializer, ProductSerializer, ColorProducSerializer, ImgProducSerializer
 from rest_framework import status
-from .models import Login, Usuario, Productos, ColoresProductos, ImagenesProducto, Colores, Talla, TallaDelProducto, ProductosEnCarrito, Carrito
-from django.db.models import Q
+from .models import Login, Usuario, Productos, ColoresProductos, ImagenesProducto, Colores, Talla, TallaDelProducto, ProductosEnCarrito, TallesPersonalizados
 
+from .models import Newsletter
 
 # Create your views here.
 
@@ -51,6 +51,51 @@ class TallaDeProductoView(View):
     def delete(self, request):
         pass
     
+class CrearTallaPersonalizada(View):
+    def get(self, request):
+        pass
+    def post(self, request):
+        pass
+    def put(self, request):
+        
+        talla = request.data
+        dni_entrante = talla['dni']
+
+        talla_personalizada = get_object_or_404(TallesPersonalizados, dni = dni_entrante)
+
+        if talla_personalizada:
+            talla_personalizada.cuello = ['cuello']
+            talla_personalizada.busto = ['busto']
+            talla_personalizada.con_rodilla = ['conRodilla']
+            talla_personalizada.larg_talle = ['largTalle']
+            talla_personalizada.con_cintura = ['conCintura']
+            talla_personalizada.con_cadera = ['conCadera']
+            talla_personalizada.larg_manga = ['largManga']
+            talla_personalizada.con_muneca = ['conMuneca']
+            talla_personalizada.larg_pierna = ['largPierna']
+            talla_personalizada.altura_rodilla = ['alturaRodilla']
+        else:
+            talla_personalizada = TallesPersonalizados(
+                cuello = talla['cuello'],
+                busto = talla['busto'],
+                con_rodilla = talla['conRodilla'],
+                larg_talle = talla['largTalle'],
+                con_cintura = talla['conCintura'],
+                con_cadera = talla['conCadera'],
+                larg_manga = talla['largManga'],
+                con_muneca = talla['conMuneca'],
+                larg_pierna = talla['largPierna'],
+                altura_rodilla = talla['alturaRodilla'],
+                dni = talla['dni']
+            )
+        
+        talla_personalizada.save()
+
+        return Response({'message': 'Talle personalizado creado/actualizado con éxito'}, status=status.HTTP_201_CREATED)
+
+
+    def delete(self, request):
+        pass
 
 
 class UsuarioView (View):
@@ -77,7 +122,7 @@ class ProductoAlCarritoView (View):
     def get (self, request):
         pass
     
-    def post (self, request):
+    def put (self, request):
 
         dni = request.data.get('id_usuario')
         try:
@@ -100,7 +145,7 @@ class ProductoAlCarritoView (View):
 
         producto_en_carrito.save()
 
-    def put (self, request):
+    def post (self, request):
         pass
     def delete (self, request):
         pass
@@ -160,17 +205,30 @@ class LoginQueryView(APIView):
 class ProductListView(APIView):
     def get(self, request):
         products = Productos.objects.all()
-        serializer = ProductSerializer(products, many = True)
-        return Response(serializer.data)
-    
-class ColorProducView(APIView):
-    def get(self, request, id_prod):
-        color = ColoresProductos.objects.filter(id_prod=id_prod)
-        a = []
-        for obj in color:
-            col = obj.id_color.__str__()
-            a.append(col)
-            response_data = {'colores': a}
+        lib = []
+        for prod in products:
+            color = ColoresProductos.objects.filter(id_prod=prod.id_prod)
+            picture = ImagenesProducto.objects.filter(id_prod=prod.id_prod)
+            a = []
+            b = []
+            for obj in color:
+                col = obj.id_color.__str__()
+                a.append(col)
+            for obj2 in picture:
+                img = obj2.img
+                b.append(img)
+            
+            lib.append ({
+                'id':prod.id_prod, 
+                'name': prod.nombre,
+                'description':prod.desc,
+                'price': prod.precio, 
+                'icon': b[0], 
+                'pictures': b, 
+                'colors': a, 
+                'type': prod.id_cat.__str__(),
+                })
+        response_data={'products': lib}
         return JsonResponse(response_data)
 
 class ImgProducView(APIView):
@@ -203,3 +261,11 @@ class RegistroView(APIView):
         login.save()
 
         return Response({'mensaje': 'Usuario registrado exitosamente'})
+
+
+class NewsletterView (View):
+    def post (self, request):
+        newsletter = Newsletter()
+        newsletter.email = request.POST ["email"]
+        newsletter.save()
+        

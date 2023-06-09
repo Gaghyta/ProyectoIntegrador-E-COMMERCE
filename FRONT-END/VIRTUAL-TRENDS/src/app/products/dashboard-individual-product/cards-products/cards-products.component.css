@@ -26,7 +26,7 @@
 }
 
 .color-box:hover {
-    box-shadow: 0px 0px 50px 8px rgba(0,0,0,0.52);
+    box-shadow: 0px 0px 20px 8px rgba(0,0,0,0.52);
 }
 
 .box-shadow {
@@ -61,6 +61,7 @@
 .sizes-button:disabled {
     color:#666;
     background:#ccc;
+    cursor: default;
 }
 
 .colors {

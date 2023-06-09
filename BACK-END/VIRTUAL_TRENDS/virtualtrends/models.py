@@ -298,19 +298,6 @@ class Login(models.Model):
     def __str__(self):
         return self.email
 
-# Regiatro de los visitantes y usuarios que quiran recibir novedades
-
-class Newsletter(models.Model):
-    email = models.CharField(max_length=50, primary_key=True)
-    class Meta:
-        db_table = 'newsletter'
-        verbose_name = 'Registro de emails para Newsletter'
-        verbose_name_plural = "Newsletters"
-    def __unicode__(self):
-        return self.email
-    def __str__(self):
-        return self.email
-
 # Productos en el carrito. 
 
 class ProductosEnCarrito(models.Model):
@@ -329,3 +316,14 @@ class ProductosEnCarrito(models.Model):
     def __str__(self):
         return "El carrito "+str(self.id_car)+" tiene "+str(self.cantidad)+" del producto "+str(self.id_prod)
 
+# LISTA DE DISTRIBUCIÓN NEWSLETTER 
+class Newsletter(models.Model):
+    email = models.CharField(max_length=50, primary_key=True)
+    class Meta:
+        db_table= 'newsletter'
+        verbose_name = 'Lista de emails para distribución  de Nesletter Virtual Trends'
+        verbose_name_plural = 'Newsletters'
+    def _unicode_(self):
+        return self.email
+    def _str_(self):
+        return self.email

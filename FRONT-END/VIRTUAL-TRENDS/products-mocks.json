@@ -2,105 +2,151 @@
     "products": [
         {
           "id": 1,
-          "name": "CORALITA ASIMÉTRICA 2678",
+          "name": "CORALITA ASIMÉTRICA",
           "description": "Remera confeccionada en textil semi translúcido, compuesto en un  65% viscosa - 35% poliéster. El modelo utilizado es en color coral. Posee detalles en el frente y espalda, dada por un corte en el lado izquierdo que da como resultado un ruedo asimétrico.",
           "price": 500,
-          "icon": "https://picsum.photos/id/128/200/300",
+          "icon": "assets/products/01_ASSYMETRICTEE/01_ASSYMETRICTEE_Custom_View_2.webp",
           "pictures": [
             {
               "id": 1,
-              "src": "../../../src/assets/primary-pic.png"
+              "src": "assets/products/01_ASSYMETRICTEE/01_ASSYMETRICTEE_Custom_View_2.webp"
             },
             {
               "id": 2,
-              "src": "../../../src/assets/secondary-pic.png"
+              "src": "assets/products/01_ASSYMETRICTEE/01_ASSYMETRICTEE_Custom_View_3.webp"
             },
             {
               "id": 3,
-              "src": "../../../src/assets/tertiary-pic.png"
+              "src": "assets/products/01_ASSYMETRICTEE/01_ASSYMETRICTEE_Custom_View_4.webp"
             }
           ],
           "colors": ["dark-red", "dark-green", "purple-grey", "orange", "coral", "cyan"],
-          "sizes": ["M", "L", "XL"],
           "type": "Remera",
           "favorite": true,
           "amount": 2
         },
         {
           "id": 2,
-          "name": "AZAFRÁN TÓXICO 2864",
-          "description": "Pantalón de jean con rasgaduras elegantes. El modelo utilizado es en color rojo oscuro. Posee un estampado leve de líneas irregulares.",
+          "name": "COCKTAIL DRESS",
+          "description": "Vestido liso y brillante de seda. El modelo utilizado es coral. El largo del vestido puede variar según lo que desee el cliente. Se amolda fácilmente al cuerpo.",
           "price": 600,
-          "icon": "https://picsum.photos/id/127/200/300",
+          "icon": "assets/products/02_COCTAILDRESS/COCTAILDRESS_Custom_View_1.webp",
           "pictures": [
             {
               "id": 1,
-              "src": "../../../src/assets/primary-pic.png"
+              "src": "assets/products/02_COCTAILDRESS/COCTAILDRESS_Custom_View_1.webp"
             },
             {
               "id": 2,
-              "src": "../../../src/assets/secondary-pic.png"
+              "src": "assets/products/02_COCTAILDRESS/COCTAILDRESS_Custom_View_2.webp"
             },
             {
               "id": 3,
-              "src": "../../../src/assets/tertiary-pic.png"
+              "src": "assets/products/02_COCTAILDRESS/COCTAILDRESS_Custom_View_3.webp"
             }
           ],
-          "colors": ["dark-red", "dark-green", "purple-grey", "orange", "coral", "cyan"],
-          "sizes": ["S", "M", "L", "XL"],
-          "type": "Pantalón",
+          "colors": ["dark-red", "purple-grey", "coral"],
+          "type": "Vestido",
           "favorite": false,
           "amount": 0
         },
         {
           "id": 3,
-          "name": "PANTERA OSCURA 2543",
-          "description": "Guantes de cuero ecológico con un brillo peculiar. Con un largo de 30cm, estos guantes recubren el antebrazo apegándose al mismo. El modelo utilizado es en negro.",
+          "name": "TOTEBAG",
+          "description": "Bolso de mano de cuero. Contiene breteles para ajustar las tiras del bolso. El modelo utilizado es negro.",
           "price": 300,
-          "icon": "https://picsum.photos/id/126/200/300",
+          "icon": "assets/products/03_TOTEBAG/03_TOTEBAG_Custom_View_2.webp",
           "pictures": [
             {
               "id": 1,
-              "src": "../../../src/assets/primary-pic.png"
+              "src": "assets/products/03_TOTEBAG/03_TOTEBAG_Custom_View_2.webp"
             },
             {
               "id": 2,
-              "src": "../../../src/assets/secondary-pic.png"
+              "src": "assets/products/03_TOTEBAG/03_TOTEBAG_Custom_View_3.webp"
             },
             {
               "id": 3,
-              "src": "../../../src/assets/tertiary-pic.png"
+              "src": "assets/products/03_TOTEBAG/03_TOTEBAG_Custom_View_4.webp"
             }
           ],
-          "colors": ["dark-red", "dark-green", "purple-grey", "orange", "coral", "cyan"],
-          "sizes": ["S", "M", "XL"],
+          "colors": ["dark-red", "dark-green", "purple-grey"],
           "type": "Accesorio",
           "favorite": false,
           "amount": 1
         },
         {
           "id": 4,
-          "name": "BLOODY MARY 2447",
-          "description": "Vestido liso y brillante de seda. El modelo utilizado es coral. El largo del vestido puede variar según lo que desee el cliente. Se amolda fácilmente al cuerpo.",
+          "name": "OVERSIZE CARDIGAN",
+          "description": "Pullover apeluchado con finalizaciones lisas y de seda. Puede usarse de manera abierta o cerrada conteniendo 3 botones. El modelo utilizado es en coral.",
           "price": 700,
-          "icon": "https://picsum.photos/id/129/200/300",
+          "icon": "assets/products/11_OVERSIZECARDIGAN/11_OVERSIZECARDIGAN_Custom_View_2_1.webp",
           "pictures": [
             {
               "id": 1,
-              "src": "../../../src/assets/primary-pic.png"
+              "src": "assets/products/11_OVERSIZECARDIGAN/11_OVERSIZECARDIGAN_Custom_View_2_1.webp"
             },
             {
               "id": 2,
-              "src": "../../../src/assets/secondary-pic.png"
+              "src": "assets/products/11_OVERSIZECARDIGAN/11_OVERSIZECARDIGAN_Custom_View_4_1.webp"
             },
             {
               "id": 3,
-              "src": "../../../src/assets/tertiary-pic.png"
+              "src": "assets/products/11_OVERSIZECARDIGAN/11_OVERSIZECARDIGAN_Custom_View_3_1.webp"
             }
           ],
-          "colors": ["dark-red", "dark-green", "purple-grey", "orange", "coral", "cyan"],
-          "sizes": ["S", "M", "XL"],
-          "type": "Vestido",
+          "colors": ["purple-grey", "coral", "cyan"],
+          "type": "Suéter",
+          "favorite": true,
+          "amount": 1
+        },
+        {
+          "id": 5,
+          "name": "MULTIPOCKET BOMBER",
+          "description": "Chaqueta de cuero negra que se amolda fácilmente al cuerpo. Tiene variados bolsillos y cierres.",
+          "price": 700,
+          "icon": "assets/products/21_MULTIPOCKET_BOMBER/21_MULTIPOCKET_BOMBER_Custom_View_1.webp",
+          "pictures": [
+            {
+              "id": 1,
+              "src": "assets/products/21_MULTIPOCKET_BOMBER/21_MULTIPOCKET_BOMBER_Custom_View_1.webp"
+            },
+            {
+              "id": 2,
+              "src": "assets/products/21_MULTIPOCKET_BOMBER/21_MULTIPOCKET_BOMBER_Custom_View_2.webp"
+            },
+            {
+              "id": 3,
+              "src": "assets/products/21_MULTIPOCKET_BOMBER/21_MULTIPOCKET_BOMBER_Custom_View_3.webp"
+            }
+          ],
+          "colors": ["dark-red", "dark-green", "purple-grey"],
+          "type": "Campera",
+          "favorite": true,
+          "amount": 1
+        },
+        {
+          "id": 6,
+          "name": "SUMMERTOP",
+          "description": "Top elegante de seda con volado en la parte inferior. El modelo utilizado es cyan. Se amolda fácilmente al cuerpo.",
+          "price": 300,
+          "icon": "assets/products/29_SUMMERTOP/29_SUMMERTOP_Custom_View_5.webp",
+          "pictures": [
+            {
+              "id": 1,
+              "src": "assets/products/29_SUMMERTOP/29_SUMMERTOP_Custom_View_5.webp"
+            },
+            {
+              "id": 2,
+              "src": "assets/products/29_SUMMERTOP/29_SUMMERTOP_Custom_View_6.webp"
+            },
+            {
+              "id": 3,
+              "src": "assets/products/29_SUMMERTOP/29_SUMMERTOP_Custom_View_9.webp"
+            }
+          ],
+          "colors": ["orange", "coral", "cyan"],
+          "type": "Remera",
           "favorite": true,
           "amount": 1
         }

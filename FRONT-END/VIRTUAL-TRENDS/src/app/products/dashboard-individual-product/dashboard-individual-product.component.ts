@@ -29,6 +29,12 @@ export class DashboardIndividualProductComponent {
           this.pictures = product.pictures;
         }
       });
+      this.ProductsFactoryService.saveProduct({
+        name: this.title,
+        description: this.description,
+        colors: this.colors,
+        pictures: this.pictures
+      });
     });
   }
 
