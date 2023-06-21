@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DeleteUserService {
   // reveer la ruta
-  private apiUsers = 'http://localhost:8000/api/users/';
+  private apiUsers = 'http://localhost:8000/api/usuario/eliminar/';
 
 
   constructor(private http : HttpClient) { }
