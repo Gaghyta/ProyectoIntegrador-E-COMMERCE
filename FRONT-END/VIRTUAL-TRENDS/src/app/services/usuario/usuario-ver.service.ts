@@ -35,9 +35,6 @@ export class UsuarioVerService {
           this.datosUsuario = user
         })
       })
-      
-      console.log(this.datosUsuario.nombre)
-
       return this.datosUsuario
     }
 }

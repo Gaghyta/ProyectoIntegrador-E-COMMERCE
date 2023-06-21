@@ -16,36 +16,38 @@ export class EnviarTallaPersonalizadaService {
     this.tallesPersonalizados = {}
    }
 
-   agregarDNI(){
+   enviarTallaPersonalizada(tallas: any){
+
     this.dni.recibirDNI().subscribe(DNI => {
       this.tallesPersonalizados.dni = DNI
       
-      console.log(this.tallesPersonalizados + " Recien asignado")
+      console.log(this.tallesPersonalizados + " recien asignado")
     })
-   }
+    
+    console.log("pre edicion", this.tallesPersonalizados)
 
-   enviarTallaPersonalizada(tallas: any){
-    this.agregarDNI()
     this.tallesPersonalizados = {
       tallas,
       dni: this.tallesPersonalizados.dni
     }
 
-    const observer: Observer<Object> = {
-      next: (response: Object) => {
-        console.log('La petición se realizó con éxito: ', response);
+    console.log("post edicion", this.tallesPersonalizados)
+
+    this.http.put('http://localhost/api/crear-talla-personalizada', this.tallesPersonalizados).subscribe({
+      next:(response_msg) => {
+        console.log(response_msg)
       },
-      error: (error: any) => {
-        console.error('Error en la petición: ', error);
+      error:(error_msg) => {
+        console.error(error_msg)
       },
-      complete: () => {}
-    };
+      complete:() => {
+        console.info('envio de talla completo')
+      }
+    }) 
 
-    this.http.put('http://localhost/api/crear-talla-personalizada', this.tallesPersonalizados).subscribe(observer)
 
 
-    const tallesJSON = JSON.stringify(this.tallesPersonalizados);
-    console.log(tallesJSON + " posterior a put");
+
    }
 
 }

@@ -5,5 +5,13 @@
   <div *ngIf="!isLoading">
       <h1 class="main-title">FAVORITOS</h1>
       <app-product-card [products]="products" [hasFavorite]="true" [disabledRedirect]="true"></app-product-card>
+      <div *ngIf="emptyFavorites">
+        <p class="empty-favorite">
+          Todavía no tenés productos agregados a <b style="font-family: 'Archivo', sans-serif;">Favoritos</b>.
+        </p>
+        <p class="empty-favorite">
+          Para agregar un producto a <b style="font-family: 'Archivo', sans-serif;">Favoritos</b>, hacé click en el banderín que aparece en la esquina superior izquierda de cada producto.
+        </p>
+      </div>
   </div>
 </div>

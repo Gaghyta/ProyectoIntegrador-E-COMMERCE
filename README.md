@@ -6,7 +6,12 @@ El sistema deberá guardar la información en una base de datos para futuras con
 
 
 # VIRTUAL TRENDS 
+### Edición final (con marca de agua) 10:47
+[![Video Presentación](https://img.youtube.com/vi/WdF4OM8eYXc/0.jpg)](https://www.youtube.com/watch?v=WdF4OM8eYXc)
+
+### Edición final (sin marca de agua) 12:55
 [![Video Presentación](https://img.youtube.com/vi/NvvD0ANatUU/0.jpg)](https://www.youtube.com/watch?v=NvvD0ANatUU)
+
 
 Espacio de venta de indumentaria, calzado y accesorios de moda realizadas a partir de la producción digital (Se ofrecen los productos -no mediante fotografías del producto- sino a través de renders realizados con la última tecnología de software 3D especializado en el área).
 Virtual Trend consiste en un e-commerce que fomenta no sólo el comercio virtual (no in situ) sino la producción y personalización del talle a través de la virtualidad y sus posibilidades de proyección . A la vez, ayuda a tender lazos entre diferentes marcas y el nuevo tipo de consumidor que disfruta de la practicidad de las compras virtuales pero que desea, a la vez, una prenda hecha a medida. Nosotros gestionamos la unión de marcas y diseñadores que proyectan sus colecciones a través de las tecnologías de software 3D especializado.

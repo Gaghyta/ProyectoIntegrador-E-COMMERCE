@@ -127,10 +127,12 @@ export class TallaPersonalizadaComponent implements OnInit{
 
   agregar_al_carrito() {
     if (this.form.valid) {
-      this.productData.enviarDatos('talla', 'personalizada');
+      this.productData.enviarDatos('talla', 'P');
       this.productData.enviarDatos('personalizado', true);
-      this.productCarrito.agregarCarrito();
       this.enviarPersonalizada.enviarTallaPersonalizada(this.tallaPersonalizada);
+      console.log("form enviado:", this.tallaPersonalizada)
+      this.productCarrito.datosProducto()
+      this.productCarrito.agregarCarrito();
       this.navigation.navigateToCarrito();
     }
   }

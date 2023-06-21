@@ -10,7 +10,6 @@ from .serializers import CategoriaSerializer, LoginSerializer, ProductSerializer
 from rest_framework import status
 from .models import Categoria, Login, Usuario, Productos, ColoresProductos, ImagenesProducto, Colores, Talla, TallaDelProducto, ProductosEnCarrito, TallesPersonalizados, Carrito, Favoritos, Newsletter 
 from django.forms.models import model_to_dict
-import json
 from rest_framework.exceptions import ValidationError
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
@@ -32,35 +31,38 @@ class TallaDeProductoView(View):
     def delete(self, request):
         return Response({'message': 'Peticion erronea'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
     
-class CrearTallaPersonalizada(View):
+class CrearTallaPersonalizada(APIView):
     def get(self, request):
         return Response({'message': 'Peticion erronea'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
-    def post(self, request):
-        return Response({'message': 'Peticion erronea'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
     def put(self, request):
-        permission_classes = [AllowAny]
+        return Response({'message': 'Peticion erronea'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+    def post(self, request):
         talla = request.data
         dni_entrante = talla['dni']
+        tallas_entrantes = talla['tallas'] 
+        print("talla_pers llamada")
 
-        talla_personalizada, created = TallesPersonalizados.objects.get_or_create(dni = dni_entrante)
-        talla_personalizada.cuello = talla['cuello']
-        talla_personalizada.busto = talla['busto']
-        talla_personalizada.con_rodilla = talla['conRodilla']
-        talla_personalizada.larg_talle = talla['largTalle']
-        talla_personalizada.con_cintura = talla['conCintura']
-        talla_personalizada.con_cadera = talla['conCadera']
-        talla_personalizada.larg_manga = talla['largManga']
-        talla_personalizada.con_muneca = talla['conMuneca']
-        talla_personalizada.larg_pierna = talla['largPierna']
-        talla_personalizada.altura_rodilla = talla['alturaRodilla']
+        try:
+            talla_guardada = TallesPersonalizados.objects.get(dni=dni_entrante)
 
-        talla_personalizada.save()
+        except TallesPersonalizados.DoesNotExist:
+            talla_guardada = TallesPersonalizados.objects.create(dni=Usuario.objects.get(dni=dni_entrante))
 
-        if created:
-            return Response({'message': 'Talle personalizado creado con éxito'}, status=status.HTTP_201_CREATED)
-        else:
-            return Response({'message':'Talle personalizado actualizado cone éxito'}, status=status.HTTP_200_OK)
+        talla_guardada.cuello = tallas_entrantes['cuello']
+        talla_guardada.busto = tallas_entrantes['busto']
+        talla_guardada.con_rodilla = tallas_entrantes['conRodilla']
+        talla_guardada.larg_talle = tallas_entrantes['largTalle']
+        talla_guardada.con_cintura = tallas_entrantes['conCintura']
+        talla_guardada.con_cadera = tallas_entrantes['conCadera']
+        talla_guardada.larg_manga = tallas_entrantes['largManga']
+        talla_guardada.con_muneca = tallas_entrantes['conMuneca']
+        talla_guardada.larg_pierna = tallas_entrantes['largPierna']
+        talla_guardada.altura_rodilla = tallas_entrantes['alturaRodilla']
 
+        talla_guardada.save()
+
+    
+        return Response({'message': 'Producto guardado'}, status=status.HTTP_201_CREATED)
 
     def delete(self, request):
         return Response({'message': 'Peticion erronea'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
@@ -112,37 +114,39 @@ class ProductoAlCarritoView (APIView):
         dni = request.data.get('id_usuario')
         try:
             carrito = Carrito.objects.get(dni=dni)
-            id_car = carrito.id_car
-            print("2")
+
         except Carrito.DoesNotExist:
-            carrito = Carrito.objects.create(dni=dni)
-            id_car = carrito.id_car
-            print("3")
+            carrito = Carrito.objects.create(dni=Usuario.objects.get(dni=dni))
+
+        producto = request.data.get('id_producto')
+        producto_seleccionado = Productos.objects.get(id_prod=producto)
 
         producto_en_carrito = ProductosEnCarrito(
-            id_prod=request.data.get('id_producto'),
-            id_car=id_car,
-            cantidad=request.data.get('cantidad'),
+            id_prod=producto_seleccionado,
+            id_car=carrito,
+            cantidad=1,
             talla=request.data.get('talla'),
             color=request.data.get('color'),
             espersonalizado=request.data.get('personalizado')
         )
 
         producto_en_carrito.save()
-        print("4")
+
+        return Response({'message': 'Producto guardado'}, status=status.HTTP_201_CREATED)
 
     def put (self, request):
         return Response({'message': 'Peticion erronea'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
     def delete (self, request):
         return Response({'message': 'Peticion erronea'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
-class ConsultProductoCarrito(APIView):
-    def get(self, request, dni):
-        carrito = Carrito.objects.filter(dni=dni, concretado=False).first()
+class  ConsultProductoCarrito(APIView):
+    def get(self, request):
+        dni_rec=request.GET.get('dni')
+        carrito = Carrito.objects.filter(dni=Usuario.objects.get(dni=dni_rec), concretado=False).first()
 
         if carrito:
             products = []
-            productos_en_carrito = ProductosEnCarrito.objects.filter(id_car=carrito.id_car)
+            productos_en_carrito = ProductosEnCarrito.objects.filter(id_car=carrito)
             for list in productos_en_carrito:  
                 products.append({
                     'id_prod': list.id_prod.id_prod,
@@ -195,18 +199,18 @@ class LoginValidView(APIView):
 
         usuario = Usuario.objects.get(dni=login.dni_id)
         response_data = {
-            'nombre': usuario.nombre,'apellido': usuario.apellido,'dni': usuario.dni, 'menssaje':'OK'
+            'nombre': usuario.nombre,'apellido': usuario.apellido,'dni': usuario.dni, 'id_lvl': usuario.id_lvl.id_lvl, 'menssaje':'OK'
             }
         return Response(response_data)
 
 class ProductListView(APIView):
-    def get(self, request):
-        products = Productos.objects.all()
+    def post(self, request):
+        products = Productos.objects.filter(eliminar=False)
         lib = []
         for prod in products:
             color = ColoresProductos.objects.filter(id_prod=prod.id_prod)
             picture = ImagenesProducto.objects.filter(id_prod=prod.id_prod)
-            if (Favoritos.objects.filter(id_prod=prod.id_prod)):
+            if (Favoritos.objects.filter(id_prod=prod.id_prod, dni=request.data.get('dni')).exists()):
                 favorite = True
             else:
                 favorite = False
@@ -259,7 +263,8 @@ class ProductView(APIView):
                 'imagenes': b, 
                 'colores': a, 
                 'tallas': talles_disponibles,
-                'categoria': product.id_cat.__str__()
+                'categoria': product.id_cat.__str__(),
+                'eliminar': product.eliminar
             }
 
         except Productos.DoesNotExist:
@@ -339,60 +344,20 @@ class FavoritesView(APIView):
 
 class FavoriteChangeView(APIView):
     def post(self, request):
-        if (request.data.get('favorite')):
-            try:
-                Favoritos.objects.get(dni=request.data.get('dni'), id_prod=request.data.get('id_prod')).delete()
-                return Response({'mensaje': 'Producto eliminado de favoritos'})
-            except: 
-                return Response({'mensaje': 'Producto no se encuentra en favoritos'})
-        elif (not request.data.get('favorite')):
-            try:
-                producto = Productos.objects.get(id_prod=request.data.get('id_prod'))
-                usuario = Usuario.objects.get(dni=request.data.get('dni'))
-                favorito = Favoritos(id_prod=producto, dni=usuario)
-                favorito.save()
-                return Response({'mensaje': 'Producto agregado a favoritos'})
-            except:
-                return Response({'mensaje': 'Producto ya se encuentra en favoritos'})
+        producto = Productos.objects.get(id_prod=request.data.get('id_prod'))
+        usuario = Usuario.objects.get(dni=request.data.get('dni'))
+        try:
+            Favoritos.objects.get(id_prod = producto, dni = usuario).delete()
+            return Response({'mensaje': 'Favorito eliminado exitosamente'})
+        except:
+            Favoritos.objects.create(id_prod = producto, dni = usuario)
+            return Response({'mensaje': 'Favorito agregado exitosamente'})
 
 class NewsletterView (View):
     def post (self, request):
         newsletter = Newsletter()
         newsletter.email = request.POST ["email"]
         newsletter.save()
-
-class ProcessPaymentAPIView(APIView):
-    def post(self, request):
-        try:
-            request_values = json.loads(request.body)
-            payment_data = {
-                "transaction_amount": float(request_values["transaction_amount"]),
-                "token": request_values["token"],
-                "installments": int(request_values["installments"]),
-                "payment_method_id": request_values["issuer_id"],
-                "payer": {
-                    "email": request_values["payer"]["email"],
-                    "identification": {
-                        "type": request_values["payer"]["identification"]["type"],
-                        "number": request_values["payer"]["identification"]["number"],
-                    },
-                },
-            }
-
-            sdk = mercadopago.SDK("ACCESS_TOKEN")
-
-            payment_response = sdk.payment().create(payment_data)
-
-            payment = payment_response["response"]
-            status = {
-                "id": payment["id"],
-                "status": payment["status"],
-                "status_detail": payment["status_detail"],
-            }
-
-            return Response(data={"body": status, "statusCode": payment_response["status"]}, status=201)
-        except Exception as e:
-            return Response(data={"body": payment_response}, status=400)
 
 class RetornarPagado(APIView): # Retornar custom json
     def get(self, request):
@@ -401,7 +366,7 @@ class RetornarPagado(APIView): # Retornar custom json
 class VerUsuarioView(View):
     def get(self, request):
         dniRecibido = request.GET.get('dni')
-        usuario = get_object_or_404(Usuario, dni = dniRecibido)  
+        usuario = get_object_or_404(Usuario, dni = dniRecibido)
         usuario_data = {
             'dni': usuario.dni,
             'nombre': usuario.nombre,
@@ -441,15 +406,15 @@ class AddProductView(APIView):
         size = request.data.get('tallas')
 
         try: 
-            addprod = Productos.objects.create(nombre=nombre, precio=precio, id_cat=id_cat, stock=stock, desc=desc)
+            addprod = Productos.objects.create(nombre=nombre, precio=precio, id_cat=id_cat, stock=stock, desc=desc, eliminar=False)
             for list in imgs:
                 ImagenesProducto.objects.create(img=list, id_prod=addprod)
             for list in colors:
                 colores = Colores.objects.get(nombre = list)
-                addcolor = ColoresProductos.objects.create(id_color = colores, id_prod=addprod)
+                ColoresProductos.objects.create(id_color = colores, id_prod=addprod)
             for list in size:
                 tallas = Talla.objects.get(inicial_talle = list)
-                addtalle = TallaDelProducto.objects.create(id_talle=tallas, id_prod=addprod)
+                TallaDelProducto.objects.create(id_talle=tallas, id_prod=addprod)
         except Exception as e:
             return Response({'error' : str(e)})
         

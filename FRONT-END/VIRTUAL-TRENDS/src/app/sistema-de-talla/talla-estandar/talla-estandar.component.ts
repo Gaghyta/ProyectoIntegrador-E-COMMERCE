@@ -69,6 +69,7 @@ export class TallaEstandarComponent implements OnInit{
 
       this.productData.enviarDatos('talla', this.seleccionado)
       this.productData.enviarDatos('personalizado', false)
+      this.productCarrito.datosProducto()
       this.productCarrito.agregarCarrito()
       this.navigation.navigateToCarrito()
 

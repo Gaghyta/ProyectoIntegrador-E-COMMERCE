@@ -40,6 +40,7 @@ export class ProductoAlCarritoService {
         this.contenidoCarrito = carrito
       })
     });
+    this.precioSubtotal=0;
     this.contenidoCarrito.forEach(Precio => {
       this.precioSubtotal += Precio.precio;
     });

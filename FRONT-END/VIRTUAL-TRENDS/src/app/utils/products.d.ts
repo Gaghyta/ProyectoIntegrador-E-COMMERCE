@@ -45,7 +45,6 @@ export namespace Products {
     }
 
     export interface AdminProduct {
-        dni: number;
         id_prod?: number;
         nombre: string;
         descripcion: string;
@@ -54,5 +53,6 @@ export namespace Products {
         tallas: Sizes[];
         imagenes: string[];
         categoria: string;
+        eliminar?: boolean;
     }
 }

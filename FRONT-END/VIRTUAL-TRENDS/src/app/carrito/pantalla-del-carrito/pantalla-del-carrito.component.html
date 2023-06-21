@@ -5,7 +5,10 @@
   <div class="subtitulo">
     <p>Lista de productos</p>
   </div>
-  <div class="lista">
+  <button class="botones" (click)="abrirCarrito()">
+    {{estado_button_carrito}}
+  </button>
+  <div class="lista" *ngIf="ver_carrito">
     <div class="ngFOR" *ngFor="let producto of productos">
 
       <img class="imagen" src={{producto.url}} alt="">

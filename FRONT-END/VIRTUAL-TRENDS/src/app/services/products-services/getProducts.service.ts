@@ -11,8 +11,8 @@ export class GetProductsService {
     
   }
 
-  public get() {
+  public get(dni?: number) {
     /** Método GET para obtener todos los productos.*/
-    return this.http.get(this.apiUrl);
+    return this.http.post(this.apiUrl, {dni});
   }
 }

@@ -306,7 +306,7 @@ class ProductosEnCarrito(models.Model):
     id_prod = models.ForeignKey(Productos, to_field='id_prod', on_delete=models.CASCADE)
     id_car = models.ForeignKey(Carrito, to_field='id_car', on_delete=models.CASCADE)
     cantidad = models.IntegerField(default=1, blank=False)
-    talla = models.IntegerField(default=1, blank=False)
+    talla = models.CharField(max_length=2, blank=False)
     color = models.CharField(default= "Sin color", max_length=30, blank=False)
     espersonalizado = models.BooleanField(default=False)
     class Meta:

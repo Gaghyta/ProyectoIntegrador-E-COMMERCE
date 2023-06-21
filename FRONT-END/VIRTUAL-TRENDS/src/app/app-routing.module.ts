@@ -22,6 +22,7 @@ import { VerCuentaComponent } from './cuenta/ver-cuenta/ver-cuenta.component';
 import { NosotrosModule } from './nosotros/nosotros.module';
 import { NosotrosDashboardComponent } from './nosotros/nosotros-dashboard/nosotros-dashboard.component';
 import { PagoTypComponent } from './pasarela-pagos/pago-typ/pago-typ.component';
+import { AuthGuard } from './shared/guards/auth.service';
 
 export const routes: Routes = [
   // Redirección por defecto a Home
@@ -45,9 +46,9 @@ export const routes: Routes = [
   { path: 'favoritos', component: FavoritesComponent },
   { path: 'pago', component: PasarelaPagosComponent },
   { path: 'pago/final', component: PagoTypComponent},
-  { path: 'admin', component: AdminComponent },
-  { path: 'admin/products', component: AdminProductsComponent },
-  { path: 'admin/users', component: AdminUsersComponent },
+  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
+  { path: 'admin/products', component: AdminProductsComponent, canActivate: [AuthGuard] },
+  { path: 'admin/users', component: AdminUsersComponent, canActivate: [AuthGuard] },
   { path: 'nosotros', component: NosotrosDashboardComponent},
 
 
@@ -58,6 +59,7 @@ export const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes),CuentaModule],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard]
 })
 export class AppRoutingModule { }

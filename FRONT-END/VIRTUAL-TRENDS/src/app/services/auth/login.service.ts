@@ -3,6 +3,7 @@ import { LoginRequest } from './loginrequest';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, catchError, throwError, BehaviorSubject, tap } from 'rxjs';
 import { UserData } from './userdata';
+import { NavigationService } from '../navigation/navigation.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import { UserData } from './userdata';
 export class LoginService {
   currentUserLoginOn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(JSON.parse(localStorage.getItem('userLoginOn') as string));
   currentUserData: BehaviorSubject<UserData> = new BehaviorSubject<UserData>(JSON.parse(localStorage.getItem('credentials') as string));
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private navigationService: NavigationService) {
 
   }
 
@@ -25,6 +26,14 @@ export class LoginService {
       }),
       catchError(this.handleError)
     )
+  }
+
+  logout(){
+    this.currentUserLoginOn.next(false);
+    localStorage.removeItem('credentials');
+    localStorage.removeItem('userLoginOn');
+    this.navigationService.navigateToHome();
+    window.scrollTo({top: 0, behavior: 'smooth'});
   }
 
   private handleError(error:HttpErrorResponse){

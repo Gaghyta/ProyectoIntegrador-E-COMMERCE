@@ -36,6 +36,13 @@
     animation: spin 1s ease infinite;
 }
 
+.empty-favorite {
+    font-family: 'Archivo', sans-serif !important;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
 .container-spinner {
     padding: 15% 0;
 }

@@ -45,10 +45,11 @@ export class ProductCardComponent implements OnInit {
   actionateFavorite(e: any) {
     this.products.forEach((product: Products.Product) => {
       if (product.id === Number(e.target.id.replace(/[^0-9]/g, ''))) {
+        console.log(product.id)
+        console.log(Number(e.target.id.replace(/[^0-9]/g, '')))
         product.favorite = !product.favorite;
         this.DNIService.recibirDNI().subscribe(dni => {
-          console.log(dni);
-          this.favoritesService.post({"dni": dni, "id_prod": product.id, "favorite": product.favorite}).subscribe();
+          this.favoritesService.post({"dni": dni, "id_prod": product.id}).subscribe();
         });
       }
     });
