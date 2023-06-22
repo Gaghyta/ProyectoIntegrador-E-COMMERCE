@@ -6,10 +6,31 @@
       <p>Ingrese <b>id del usuario</b> que desea eliminar de la base de datos.</p>
       <p><b>IMPORTANTE</b>: Se recuerda que una vez eliminado el mismo no se podrá recuperar. Es una acción irreversible.</p>
 
-      <form [formGroup]="idUsuarioForm" (ngSubmit)="eliminarUsuario()">
+      <!-- <form class="short-form" action="#">
+        <input type="number" min="1" placeholder="ID del Uusario" style="width: 300px;" id="idUusario" (input)="validateIdUserDelete()" [ngClass]="[
+        !idUserValidationDelete? 'form-control is-invalid' : 'form-control is-valid']">
+        <button type="button" class="action-button" (click)="deleteUser()" style="margin-top: 20px;" [disabled]="!idUserValidationDelete">Eliminar</button>
+        <div *ngIf="showSuccessTextDelete" style="color: green; margin-top: 10px;">Usuario eliminado correctamente.</div>
+        <div *ngIf="showNotFoundTextDelete" style="color: red; margin-top: 10px;">Usuario no encontrado</div>
+      </form> -->
+
+      <form [formGroup]="idUsuarioForm" >
         <div class="form-group">
+          <!-- <label class="lab-reg">Documento de identidad</label>
+                    <input formControlName="dni" type="number" class="inp-reg">
+                    <div *ngIf="idUsuario.idUsuario.invalid && (idUsuario.dni.dirty || idUsuario.dni.touched)" class="text-danger">
+                            <div *ngIf="idUsuario.dni.errors?.['required']">
+                                Este campo es requerido.
+                            </div>
+                        </div> -->
+
+
+
+
+
+
           <label for="idUsuario">ID de Usuario:</label>
-          <input type="number" id="idUsuario" formControlName="idUsuario" class="form-control"  min="1" placeholder="ID del Usuario"
+          <input type="number"  formControlName="idUsuario"  class="form-control"  min="1" placeholder="ID del Usuario"
             (blur)="idUsuarioForm.controls['idUsuario'].markAsTouched()">
         </div>
         <div *ngIf="idUsuarioForm.controls['idUsuario'].invalid && idUsuarioForm.controls['idUsuario'].touched">
@@ -20,13 +41,9 @@
             El ID debe ser un número válido.
           </div>
         </div>
-        <button type="button" class="action-button"  (click)="eliminarUsuario">Eliminar</button>
-        <!-- <button type="button" class="action-button" (click)="eliminarUsuario">Eliminar</button> -->
+        <button type="submit" class="action-button"  (click)="eliminarUsuario()">Eliminar</button>
         <div *ngIf="mensajeEliminado" class="mensaje-eliminado">Usuario eliminado exitosamente.</div>
       </form>
-    </div>
-  </div>
-</div>
 
   <div class="admin-container">
     <h2>Listado de Usuarios</h2>

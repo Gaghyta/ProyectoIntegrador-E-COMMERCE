@@ -1,8 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
 import { GetUsersService } from 'src/app/services/admin/getUsers.service';
 import { DeleteUserService } from 'src/app/services/admin/deleteUser.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-admin-users',
@@ -15,15 +14,18 @@ export class AdminUsersComponent implements OnInit {
   @Input() type: string = '';
   users = [];
   public mensajeEnviado: boolean = false;
-  idUsuarioForm: FormGroup;
+  idUsuarioForm= this.formBuilder.group  ({
+    idUsuario: ['', Validators.required, Validators.pattern('^[0-9]+$')],
+  });
+  idUser: any;
+  // id_User: string = '';
   idUsuarioInvalid: boolean = false;
   mensajeEliminado: boolean = false;
 
 
+
+
   constructor(private UsersService: GetUsersService, private formBuilder: FormBuilder, private deleteUserService: DeleteUserService ) {
-    this.idUsuarioForm = this.formBuilder.group({
-      idUsuario: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]]
-    });
    }
 
   ngOnInit() {
@@ -32,20 +34,29 @@ export class AdminUsersComponent implements OnInit {
       Array.from(this.users).forEach((user: any) => {
         user.dni = (user.dni).toLocaleString();
         user.dni = user.dni.split(',').join('.');
+              });
 
-      });
     }
     );
+
   }
   showForm(id: string) {
     this.formType = 'delete';
   }
   eliminarUsuario() {
+
     if (this.idUsuarioForm.valid) {
-      const idUsuario = this.idUsuarioForm.value.idUsuario;
-      // Lógica para eliminar el usuario con el ID proporcionado
-      console.log('ID de usuario a eliminar:', idUsuario);
-      this.mensajeEliminado = true;
+      this.deleteUserService.eliminarUser(this.idUsuarioForm.value).subscribe({
+        next:(deletemensaje)=>{
+          console.log(deletemensaje);
+        },
+        error:(deletemensaje)=>{
+          console.error(deletemensaje);
+          },
+        complete:()=>{
+          console.info("eliminado satisfactoriamente");
+        }
+      })
     } else {
       this.idUsuarioInvalid = true;
     }
@@ -55,7 +66,22 @@ export class AdminUsersComponent implements OnInit {
     return this.idUsuarioForm.controls['idUsuario'];
 
   }
-}
+  // validateIdUserDelete() {
+  //   const id_prod_delete = (document.getElementById('id-producto-delete') as HTMLInputElement).value;
+  //   this.idUserValidationDelete = id_prod_delete.length > 0 && (/^[0-9]+$/g).test(id_prod_delete);
+  // }
 
+  // deleteUser() {
+  //   this.id_User = (document.getElementById('idUsuario') as HTMLInputElement).value;
+  //   this.deleteUserService.delete(Number(this.id_User)).subscribe((data: any) => {
+  //     this.showNotFoundTextDelete = false;
+  //     this.showSuccessTextDelete = true;
+  //   }, error => {
+  //     this.showNotFoundTextDelete = true;
+  //   });
+  // }
+
+
+}
 
 
