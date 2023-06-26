@@ -1,18 +1,15 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
 export class DeleteUserService {
   // reveer la ruta
-  private apiUsers = 'http://localhost:8000/api/users/';
-
 
   constructor(private http : HttpClient) { }
-  public delete() {
-    return this.http.delete(this.apiUsers);
+    eliminarUser(dni:any):Observable<any> {
+      return this.http.post("http://localhost:8000/api/usuarios/eliminar/", dni);
   }
 }
-
 

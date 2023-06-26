@@ -1,61 +1,78 @@
-import { Component, OnInit, Input } from '@angular/core';
 import { GetUsersService } from 'src/app/services/admin/getUsers.service';
 import { DeleteUserService } from 'src/app/services/admin/deleteUser.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-admin-users',
   templateUrl: './admin-users.component.html',
   styleUrls: ['./admin-users.component.css']
 })
-export class AdminUsersComponent implements OnInit {
-  public formType: string = '';
-  // usuario: usuario.usuario[] = [];
-  @Input() type: string = '';
-  users = [];
-  public mensajeEnviado: boolean = false;
-  idUsuarioForm: FormGroup;
-  idUsuarioInvalid: boolean = false;
-  mensajeEliminado: boolean = false;
+export class AdminUsersComponent implements OnInit{
+
+  idUsuarioForm = this.formBuilder.group({
+
+    dni:['',[Validators.required, Validators.pattern('^[0-9]+$')]],
+
+  })
+
+  formUp: boolean = false;
+  messejeInfo: string = "";
+  messejeError: string = "";
+  listUser: any = [];
+
+ngOnInit(): void {
+  this.listUser = this.UsersService.get().subscribe(
+    {
+      next:(getListUser)=>{
+        this.listUser = getListUser;
+      },
+      error:(getListUser)=>{
+        console.error(getListUser);
+      },
+      complete:()=>{
+        console.log("Se carga lista de usuarios OK.");
+      }
+    }
+  );
+}
 
 
   constructor(private UsersService: GetUsersService, private formBuilder: FormBuilder, private deleteUserService: DeleteUserService ) {
-    this.idUsuarioForm = this.formBuilder.group({
-      idUsuario: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]]
-    });
    }
 
-  ngOnInit() {
-    this.UsersService.get().subscribe((data: any) => {
-      this.users = data;
-      Array.from(this.users).forEach((user: any) => {
-        user.dni = (user.dni).toLocaleString();
-        user.dni = user.dni.split(',').join('.');
-
-      });
+  showForm() {
+  if(this.formUp == false){
+    this.formUp = true;
     }
-    );
+  else{
+    this.formUp = false;
+    }
   }
-  showForm(id: string) {
-    this.formType = 'delete';
-  }
+
+
   eliminarUsuario() {
     if (this.idUsuarioForm.valid) {
-      const idUsuario = this.idUsuarioForm.value.idUsuario;
-      // Lógica para eliminar el usuario con el ID proporcionado
-      console.log('ID de usuario a eliminar:', idUsuario);
-      this.mensajeEliminado = true;
+      this.deleteUserService.eliminarUser(this.idUsuarioForm.value).subscribe({
+        next:(deletemensaje)=>{
+          console.log(deletemensaje);
+        },
+        error:(deletemensaje)=>{
+          this.messejeInfo = "";
+          this.messejeError = deletemensaje.error.error;
+          ;
+          },
+        complete:()=>{
+          this.messejeInfo = "Se eliminó el usuario correctamente.";
+          this.messejeError = "";
+          this.idUsuarioForm.reset();
+        }
+      })
     } else {
-      this.idUsuarioInvalid = true;
+      this.messejeError = "Hay un inconveniente con la validacion del formulario, volver a verificar."
     }
   }
 
-  get idUsuario() {
-    return this.idUsuarioForm.controls['idUsuario'];
-
-  }
 }
-
 
 

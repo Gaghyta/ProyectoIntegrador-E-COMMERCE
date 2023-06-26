@@ -9,6 +9,8 @@ import { ProductsModule } from '../products/products.module';
 import { AdminProductsFormComponent } from './admin-products/admin-products-form/admin-products-form.component';
 import { CuentaModule } from '../cuenta/cuenta.module';
 import { UserCardModule } from '../cuenta/user-card/user-card.module';
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { UserCardModule } from '../cuenta/user-card/user-card.module';
     AppRoutingModule,
     ProductsModule,
     CuentaModule,
-    UserCardModule
+    UserCardModule,
+    ReactiveFormsModule
   ],
   declarations: [AdminComponent, AdminProductsComponent, AdminUsersComponent, AdminProductsFormComponent],
   schemas: [
