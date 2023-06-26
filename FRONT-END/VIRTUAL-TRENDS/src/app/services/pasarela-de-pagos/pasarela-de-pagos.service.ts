@@ -11,8 +11,8 @@ export class PasarelaDePagosService {
     
   }
 
-  public get() {
+  public post(data: any) {
     /** Método GET para saber si la compra fue aprobada.*/
-    return this.http.get(this.apiUrl);
+    return this.http.post(this.apiUrl, {data: data});
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationService } from '../services/navigation/navigation.service';
 import { PasarelaDePagosService } from '../services/pasarela-de-pagos/pasarela-de-pagos.service';
+import { ProductsFactoryService } from '../services/products-services/productsFactory.service';
 
 @Component({
   selector: 'app-pasarela-pagos',
@@ -18,7 +19,7 @@ export class PasarelaPagosComponent implements OnInit {
   dueDateValidationM: boolean = false;
   dueDateValidationY: boolean = false;
 
-  constructor(private navigate: NavigationService, private PasarelaDePagosService: PasarelaDePagosService) { }
+  constructor(private navigate: NavigationService, private PasarelaDePagosService: PasarelaDePagosService, private productsFactoryService: ProductsFactoryService) { }
 
   ngOnInit() {
   }
@@ -28,7 +29,8 @@ export class PasarelaPagosComponent implements OnInit {
   }
 
   navigateToTYP() {
-    this.PasarelaDePagosService.get().subscribe(
+    let products = this.productsFactoryService.getProductCarrito();
+    this.PasarelaDePagosService.post(products).subscribe(
       {
         next: (data) => {
         }
