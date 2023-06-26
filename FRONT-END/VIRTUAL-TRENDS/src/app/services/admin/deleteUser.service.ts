@@ -6,13 +6,10 @@ import { Injectable } from '@angular/core';
 })
 export class DeleteUserService {
   // reveer la ruta
-  private apiUsers = 'http://localhost:8000/api/usuarios/eliminar/';
-
 
   constructor(private http : HttpClient) { }
-    eliminarUser(id:any):Observable<any> {
-      return this.http.delete(this.apiUsers, id);
+    eliminarUser(dni:any):Observable<any> {
+      return this.http.post("http://localhost:8000/api/usuarios/eliminar/", dni);
   }
 }
-
 

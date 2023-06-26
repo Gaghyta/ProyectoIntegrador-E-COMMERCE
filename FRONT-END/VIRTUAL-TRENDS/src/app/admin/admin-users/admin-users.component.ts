@@ -8,79 +8,70 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './admin-users.component.html',
   styleUrls: ['./admin-users.component.css']
 })
-export class AdminUsersComponent implements OnInit {
-  public formType: string = '';
-  // usuario: usuario.usuario[] = [];
-  @Input() type: string = '';
-  users = [];
-  public mensajeEnviado: boolean = false;
-  idUsuarioForm= this.formBuilder.group  ({
-    idUsuario: ['', Validators.required, Validators.pattern('^[0-9]+$')],
-  });
-  idUser: any;
-  // id_User: string = '';
-  idUsuarioInvalid: boolean = false;
-  mensajeEliminado: boolean = false;
+export class AdminUsersComponent implements OnInit{
 
+  idUsuarioForm = this.formBuilder.group({
 
+    dni:['',[Validators.required, Validators.pattern('^[0-9]+$')]],
+
+  })
+
+  formUp: boolean = false;
+  messejeInfo: string = "";
+  messejeError: string = "";
+  listUser: any = [];
+
+ngOnInit(): void {
+  this.listUser = this.UsersService.get().subscribe(
+    {
+      next:(getListUser)=>{
+        this.listUser = getListUser;
+      },
+      error:(getListUser)=>{
+        console.error(getListUser);
+      },
+      complete:()=>{
+        console.log("Se carga lista de usuarios OK.");
+      }
+    }
+  );
+}
 
 
   constructor(private UsersService: GetUsersService, private formBuilder: FormBuilder, private deleteUserService: DeleteUserService ) {
    }
 
-  ngOnInit() {
-    this.UsersService.get().subscribe((data: any) => {
-      this.users = data;
-      Array.from(this.users).forEach((user: any) => {
-        user.dni = (user.dni).toLocaleString();
-        user.dni = user.dni.split(',').join('.');
-              });
-
+  showForm() {
+  if(this.formUp == false){
+    this.formUp = true;
     }
-    );
+  else{
+    this.formUp = false;
+    }
+  }
 
-  }
-  showForm(id: string) {
-    this.formType = 'delete';
-  }
+
   eliminarUsuario() {
-
     if (this.idUsuarioForm.valid) {
       this.deleteUserService.eliminarUser(this.idUsuarioForm.value).subscribe({
         next:(deletemensaje)=>{
           console.log(deletemensaje);
         },
         error:(deletemensaje)=>{
-          console.error(deletemensaje);
+          this.messejeInfo = "";
+          this.messejeError = deletemensaje.error.error;
+          ;
           },
         complete:()=>{
-          console.info("eliminado satisfactoriamente");
+          this.messejeInfo = "Se eliminó el usuario correctamente.";
+          this.messejeError = "";
+          this.idUsuarioForm.reset();
         }
       })
     } else {
-      this.idUsuarioInvalid = true;
+      this.messejeError = "Hay un inconveniente con la validacion del formulario, volver a verificar."
     }
   }
-
-  get idUsuario() {
-    return this.idUsuarioForm.controls['idUsuario'];
-
-  }
-  // validateIdUserDelete() {
-  //   const id_prod_delete = (document.getElementById('id-producto-delete') as HTMLInputElement).value;
-  //   this.idUserValidationDelete = id_prod_delete.length > 0 && (/^[0-9]+$/g).test(id_prod_delete);
-  // }
-
-  // deleteUser() {
-  //   this.id_User = (document.getElementById('idUsuario') as HTMLInputElement).value;
-  //   this.deleteUserService.delete(Number(this.id_User)).subscribe((data: any) => {
-  //     this.showNotFoundTextDelete = false;
-  //     this.showSuccessTextDelete = true;
-  //   }, error => {
-  //     this.showNotFoundTextDelete = true;
-  //   });
-  // }
-
 
 }
 
