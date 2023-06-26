@@ -9,7 +9,7 @@ export class ProductDataService {
   private product_info = new BehaviorSubject<any>({
     "id_producto": 0,
     "id_usuario": 0,
-    "cantidad": 0,
+    "cantidad": 1,
     "talla": "X",
     "color": "Azul",
     "personalizado": false

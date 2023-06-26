@@ -55,4 +55,13 @@ export namespace Products {
         categoria: string;
         eliminar?: boolean;
     }
+
+    export interface CarritoProduct {
+        cantidad: number;
+        color: string,
+        id_prod: number;
+        id_usuario: number;
+        personalizado: boolean;
+        talla: string;
+    }
 }

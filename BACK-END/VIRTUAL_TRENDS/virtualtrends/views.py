@@ -360,7 +360,18 @@ class NewsletterView (View):
         newsletter.save()
 
 class RetornarPagado(APIView): # Retornar custom json
-    def get(self, request):
+    def post(self, request):
+        # Reduce 1 stock for all the products in the list
+        for product in request.data.get('data'):
+            objProduct = Productos.objects.get(id_prod=product)
+            objProduct.stock -= 1
+            objProduct.save()
+            try:
+                productoEnCarrito = Carrito.objects.get(id_prod = product, concretado = False)
+                productoEnCarrito.concretado = True
+                productoEnCarrito.save()
+            except:
+                pass
         return Response({"transaccion": "aprobada"}, status=status.HTTP_200_OK)
     
 class VerUsuarioView(View):

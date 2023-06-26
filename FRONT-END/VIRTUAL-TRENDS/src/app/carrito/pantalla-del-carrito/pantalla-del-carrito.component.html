@@ -27,6 +27,6 @@
   </div>
   <div class="botones">
     <button class="volver">SEGUIR COMPRANDO</button>
-    <button (click)="navigate()" class="finalizar">PAGAR</button>
+    <button (click)="navigate()" class="finalizar" [ngClass]="{disabled: productos.length === 0}" [disabled]="productos.length === 0">PAGAR</button>
   </div>
 </div>
