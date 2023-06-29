@@ -7,17 +7,11 @@ import { map } from "rxjs/operators";
   providedIn: 'root'
 })
 export class UsuarioEditService {
-
-  private apiUrl = 'http://localhost:3000/editar-cuenta';
-  constructor(public editService: UsuarioEditService, private http:HttpClient){}
-  public put(data: any) {
-    return this.http.put(this.apiUrl, data);
+  constructor(private http : HttpClient) {}
+    editarUser(dni:any):Observable<any> {
+      return this.http.put("http://localhost:8000/api/usuarios/update/", dni);
+    }
   }
-  //   dataUsuario() {
-  //    return [{ name: 'jose', id: 33, telefono: 11111111, direccion:'moldes', altura:'2681' }];
-  // }
-   ngOnInit () {
-    // this.editService.post ({name:'jose', id: 33, telefono: 111111, direccion: 'moldes', altura: '2681'})
 
-}
-}
+
+

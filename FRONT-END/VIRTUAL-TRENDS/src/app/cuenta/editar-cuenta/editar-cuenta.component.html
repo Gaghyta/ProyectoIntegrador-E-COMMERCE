@@ -2,8 +2,108 @@
     <div class="formulario-edicion">
       <h1 class= "editar-cuenta" > EDITA TU PERFIL</h1>
         <div class="container-form col-8">
-          <form [formGroup]="formulario" (ngSubmit)="onSubmit($event)" >
+          <form [formGroup]="idUsuarioForm" class= "form-edit" >
 
+            <div class="form-nombre ">
+              <label> Nombre:</label>
+              <input formControlName="nombre" type="text" class="form-control">
+              <div *ngIf="this.idUsuarioForm.controls.nombre.invalid && (this.idUsuarioForm.controls.nombre.dirty || this.idUsuarioForm.controls.nombre.touched)" class="text-danger">
+                <div *ngIf="this.idUsuarioForm.controls.nombre.errors?.['required']">
+                  <p class="text-danger"> Campo Obligatorio</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-apellido ">
+              <label> Apellido:</label>
+              <input formControlName="apellido" type="text" class="form-control">
+              <div *ngIf="this.idUsuarioForm.controls.apellido.invalid && (this.idUsuarioForm.controls.apellido.dirty || this.idUsuarioForm.controls.apellido.touched)" class="text-danger">
+                <div *ngIf="this.idUsuarioForm.controls.apellido.errors?.['required']">
+                  <p class="text-danger"> Campo Obligatorio</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-calle ">
+              <label> Calle:</label>
+              <input formControlName="calle" type="text" class="form-control">
+              <div *ngIf="this.idUsuarioForm.controls.calle.invalid && (this.idUsuarioForm.controls.calle.dirty || this.idUsuarioForm.controls.calle.touched)" class="text-danger">
+                <div *ngIf="this.idUsuarioForm.controls.calle.errors?.['required']">
+                  <p class="text-danger"> Campo Obligatorio</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-altura ">
+              <label> Altura:</label>
+              <input formControlName="altura" type="text" class="form-control">
+              <div *ngIf="this.idUsuarioForm.controls.altura.invalid && (this.idUsuarioForm.controls.altura.dirty || this.idUsuarioForm.controls.altura.touched)" class="text-danger">
+                <div *ngIf="this.idUsuarioForm.controls.altura.errors?.['required']">
+                  <p class="text-danger"> Campo Obligatorio</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-ph ">
+              <label> PH:</label>
+              <input formControlName="ph" type="text" class="form-control">
+              <div *ngIf="this.idUsuarioForm.controls.ph.invalid && (this.idUsuarioForm.controls.ph.dirty || this.idUsuarioForm.controls.ph.touched)" class="text-danger">
+                <div *ngIf="this.idUsuarioForm.controls.ph.errors?.['required']">
+                  <p class="text-danger"> Campo Obligatorio</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-cp ">
+              <label> Código PostaL:</label>
+              <input formControlName="cp" type="text" class="form-control">
+              <div *ngIf="this.idUsuarioForm.controls.cp.invalid && (this.idUsuarioForm.controls.cp.dirty || this.idUsuarioForm.controls.cp.touched)" class="text-danger">
+                <div *ngIf="this.idUsuarioForm.controls.cp.errors?.['required']">
+                  <p class="text-danger"> Campo Obligatorio</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-ciudad ">
+              <label> Ciudad:</label>
+              <input formControlName="ciudad" type="text" class="form-control">
+              <div *ngIf="this.idUsuarioForm.controls.ciudad.invalid && (this.idUsuarioForm.controls.ciudad.dirty || this.idUsuarioForm.controls.ciudad.touched)" class="text-danger">
+                <div *ngIf="this.idUsuarioForm.controls.ciudad.errors?.['required']">
+                  <p class="text-danger"> Campo Obligatorio</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-provincia ">
+              <label> Provincia:</label>
+              <input formControlName="provincia" type="text" class="form-control">
+              <div *ngIf="this.idUsuarioForm.controls.provincia.invalid && (this.idUsuarioForm.controls.provincia.dirty || this.idUsuarioForm.controls.provincia.touched)" class="text-danger">
+                <div *ngIf="this.idUsuarioForm.controls.provincia.errors?.['required']">
+                  <p class="text-danger"> Campo Obligatorio</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-telefono ">
+              <label> Telefono:</label>
+              <input formControlName="telefono" type="text" class="form-control">
+              <div *ngIf="this.idUsuarioForm.controls.telefono.invalid && (this.idUsuarioForm.controls.telefono.dirty || this.idUsuarioForm.controls.telefono.touched)" class="text-danger">
+                <div *ngIf="this.idUsuarioForm.controls.telefono.errors?.['required']">
+                  <p class="text-danger"> Campo Obligatorio</p>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-danger">{{MensajeError}}</p>
+            <p class="text-success">{{MensajeInfo}}</p>
+            <button type="button" class="btn btn-dark" (click)="editUser()">ENVIAR</button>
+
+          </form>
+        </div>
+      </div>
+</div>
+
+<!--
             <label class="cuadro-texto">
               <h2 [ngClass]="{
                 'invalid': formulario.get('nombre').invalid && formulario.get('nombre').touched
@@ -146,15 +246,12 @@
               <div *ngIf="formulario.get('telefono').invalid && formulario.get('telefono').touched">
                 <div class="validacion" *ngIf="formulario.get('telefono').errors.required">Campo Obligatorio.</div>
               </div>
-            </label>
+            </label> -->
 
-            <button class="btn btn-dark" (click)="onSubmit" value="ENVIAR"> ENVIAR</button>
+            <!-- <button class="btn btn-dark" (click)="onSubmit" value="ENVIAR"> ENVIAR</button>
 
-            <div *ngIf="mensajeEnviado">¡Informacion actualizada!</div>
+            <div *ngIf="mensajeEnviado">¡Informacion actualizada!</div> -->
 
 
 
-           </form>
-        </div>
-      </div>
-</div>
+
