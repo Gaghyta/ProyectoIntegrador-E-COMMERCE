@@ -1,6 +1,7 @@
 import { FormBuilder, Validators } from '@angular/forms';
 import { UsuarioEditService } from 'src/app/services/usuario/usuario-edit.service';
 import { Component, OnInit, Input } from '@angular/core';
+import { UsuarioVerService } from 'src/app/services/usuario/usuario-ver.service';
 @Component({
   selector: 'app-editar-cuenta',
   templateUrl: './editar-cuenta.component.html',
@@ -25,7 +26,7 @@ export class EditarCuentaComponent implements OnInit{
   MensajeInfo: string ="";
   MensajeError: string ="";
 
-  constructor(private formBuilder: FormBuilder, private UsuarioEditService: UsuarioEditService ) {
+  constructor(private formBuilder: FormBuilder, private UsuarioEditService: UsuarioEditService, private recibirDatosDeUsuario: UsuarioVerService ) {
   }
 
   editUser (){
@@ -46,23 +47,25 @@ export class EditarCuentaComponent implements OnInit{
       })
     } else {
       this.MensajeError = "Ocurrió un problema con la carga de datos, inténtelo más tarde."
-
     }
-
   }
 
 
   ngOnInit(): void {
-    // this.idUsuarioForm = this.formBuilder.group({
-    //   nombre: ['', Validators.required],
-    //   apellido: ['', Validators.required],
-    //   calle: ['', Validators.required],
-    //   altura: ['', Validators.required],
-    //   ph: ['', Validators.required],
-    //   cp: ['', Validators.required],
-    //   ciudad: ['', Validators.required],
-    //   provincia: ['', Validators.required],
-    //   telefono: ['', Validators.pattern('[0-9]{10}')],
-    }
-  }
-
+    console.log(this.recibirDatosDeUsuario.recibirDatosDeUsuario());
+    var obj = this.recibirDatosDeUsuario.recibirDatosDeUsuario();
+    this.idUsuarioForm.setValue(
+      {
+        dni: obj.dni,
+        nombre: obj.nombre,
+        apellido: obj.apellido,
+        calle: obj.dir_calle,
+        altura: obj.dir_numero,
+        ph: obj.ph,
+        cp: obj.cp,
+        ciudad: obj.ciudad,
+        provincia: obj.provincia,
+        telefono: obj.tel_cel
+      }
+    )}
+}
