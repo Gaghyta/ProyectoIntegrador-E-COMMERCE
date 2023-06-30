@@ -15,6 +15,11 @@ export class UsuarioEditService {
     verUser(dni:any):Observable<any> {
       return this.http.get("http://localhost:8000/api/ver-usuario/?dni=${dniTemp}");
     }
+
+    editarUsuario(usuario:any):Observable<any> {
+      console.log("Servicio Editat", usuario)
+      return this.http.put("http://localhost:8000/api/usuarios/update/", usuario);
+    }
   }
 
 

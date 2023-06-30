@@ -55,7 +55,7 @@
             </div>
 
             <div class="form-cp ">
-              <label> Código PostaL:</label>
+              <label> Código Postal:</label>
               <input formControlName="cp" type="text" class="form-control">
               <div *ngIf="this.idUsuarioForm.controls.cp.invalid && (this.idUsuarioForm.controls.cp.dirty || this.idUsuarioForm.controls.cp.touched)" class="text-danger">
                 <div *ngIf="this.idUsuarioForm.controls.cp.errors?.['required']">
@@ -86,9 +86,9 @@
 
             <div class="form-telefono ">
               <label> Telefono:</label>
-              <input formControlName="telefono" type="text" class="form-control">
-              <div *ngIf="this.idUsuarioForm.controls.telefono.invalid && (this.idUsuarioForm.controls.telefono.dirty || this.idUsuarioForm.controls.telefono.touched)" class="text-danger">
-                <div *ngIf="this.idUsuarioForm.controls.telefono.errors?.['required']">
+              <input formControlName="tel" type="text" class="form-control">
+              <div *ngIf="this.idUsuarioForm.controls.tel.invalid && (this.idUsuarioForm.controls.tel.dirty || this.idUsuarioForm.controls.tel.touched)" class="text-danger">
+                <div *ngIf="this.idUsuarioForm.controls.tel.errors?.['required']">
                   <p class="text-danger"> Campo Obligatorio</p>
                 </div>
               </div>

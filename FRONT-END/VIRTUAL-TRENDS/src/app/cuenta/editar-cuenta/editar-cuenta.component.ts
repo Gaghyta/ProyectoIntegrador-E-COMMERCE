@@ -7,7 +7,10 @@ import { UsuarioVerService } from 'src/app/services/usuario/usuario-ver.service'
   templateUrl: './editar-cuenta.component.html',
   styleUrls: ['./editar-cuenta.component.css']
 })
+
+
 export class EditarCuentaComponent implements OnInit{
+
   idUsuarioForm= this.formBuilder.group({
     dni: ['',[Validators.required, Validators.pattern('^[0-9]+$')]],
 
@@ -15,23 +18,39 @@ export class EditarCuentaComponent implements OnInit{
     nombre: ['', Validators.required],
     apellido: ['', Validators.required],
     calle: ['', Validators.required],
-    altura: ['', Validators.required, Validators.pattern('^[0-9]+$')],
+    altura: ['', Validators.required],
     ph: ['', Validators.required],
     cp: ['', Validators.required],
     ciudad: ['', Validators.required],
     provincia: ['', Validators.required],
-    telefono: ['', Validators.pattern('[0-9]{10}')],
+    tel: ['', Validators.pattern('[0-9]{10}')],
   })
 
   MensajeInfo: string ="";
   MensajeError: string ="";
+  userToSend = {}
 
   constructor(private formBuilder: FormBuilder, private UsuarioEditService: UsuarioEditService, private recibirDatosDeUsuario: UsuarioVerService ) {
   }
 
   editUser (){
-    if (this.idUsuarioForm.valid) {
-      this.UsuarioEditService.editarUser (this.idUsuarioForm.value).subscribe ({
+    //if (this.idUsuarioForm.valid) {
+
+      this.userToSend = {
+        dni: this.idUsuarioForm.get("dni")?.value,
+        nombre: this.idUsuarioForm.get("nombre")?.value,
+        apellido: this.idUsuarioForm.get("apellido")?.value,
+        dir_calle: this.idUsuarioForm.get("calle")?.value,
+        dir_numero: this.idUsuarioForm.get("altura")?.value,
+        ph: this.idUsuarioForm.get("ph")?.value,
+        cp: this.idUsuarioForm.get("cp")?.value,
+        ciudad: this.idUsuarioForm.get("ciudad")?.value,
+        provincia: this.idUsuarioForm.get("provincia")?.value,
+        tel: this.idUsuarioForm.get("tel")?.value
+      }
+      console.log("editando usuario", this.userToSend)
+
+      this.UsuarioEditService.editarUsuario (this.userToSend).subscribe ({
         next:(editmensaje)=>{
           console.log(editmensaje);
         },
@@ -45,9 +64,9 @@ export class EditarCuentaComponent implements OnInit{
           this.idUsuarioForm.reset();
         }
       })
-    } else {
-      this.MensajeError = "Ocurrió un problema con la carga de datos, inténtelo más tarde."
-    }
+    //} else {
+    //  this.MensajeError = "Ocurrió un problema con la carga de datos, inténtelo más tarde."
+    //}
   }
 
 
@@ -65,7 +84,9 @@ export class EditarCuentaComponent implements OnInit{
         cp: obj.cp,
         ciudad: obj.ciudad,
         provincia: obj.provincia,
-        telefono: obj.tel_cel
+        tel: obj.tel_cel
       }
-    )}
+    )
+
+  }
 }
